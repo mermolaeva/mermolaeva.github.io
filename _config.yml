@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Site Title"
-title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
+title                    : "Marina Ermolaeva"
+title_separator          : "|"
+name                     : "Marina Ermolaeva"
+description              : ""
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -77,11 +77,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  name             :
+  avatar           : "/assets/images/IMG_0898_uncropped.JPG"
+  bio              : "PhD student<br>Department&nbsp;of&nbsp;Linguistics<br>University of Chicago"
+  location         :
+  email            : "mermolaeva@uchicago.edu"
   uri              :
   bitbucket        :
   codepen          :
@@ -89,7 +89,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "mermolaeva"
   google_plus      :
   keybase          :
   instagram        :
@@ -172,26 +172,26 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
+# paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
 gems:
-  - jekyll-paginate
-  - jekyll-sitemap
+  # - jekyll-paginate
+  # - jekyll-sitemap
   - jekyll-gist
-  - jekyll-feed
-  - jemoji
+  # - jekyll-feed
+  # - jemoji
 
 # mimic GitHub Pages with --safe
 whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
+  # - jekyll-paginate
+  # - jekyll-sitemap
   - jekyll-gist
-  - jekyll-feed
-  - jemoji
+  # - jekyll-feed
+  # - jemoji
 
 
 # Archives

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "About Me"
+title: "About me"
 author_profile: true
 header:
   image: /assets/images/UC_spring.jpg

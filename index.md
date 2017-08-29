@@ -6,7 +6,7 @@ header:
   image: /assets/images/UC_spring.jpg
 ---
 
-I am a third-year PhD student in the Department of Linguistics at the University of Chicago. In 2015, I graduated from Lomonosov Moscow State University with a Specialist degree (≈B.A.+M.A.) in Linguistics.
+I am a third-year PhD student in the [Department of Linguistics](http://linguistics.uchicago.edu/) at the [University of Chicago](http://www.uchicago.edu/). In 2015, I graduated from [Lomonosov Moscow State University](http://www.msu.ru/en/) with a Specialist degree (≈B.A.+M.A.) in Linguistics.
 
 My primary area of interest is computational linguistics. Believing that insights from theoretical linguistics can and should inform practical applications, I also enjoy implementing my research in code. During my undergraduate career, I participated in a number of linguistic expeditions and have fieldwork experience in Uralic and Altaic languages.
 

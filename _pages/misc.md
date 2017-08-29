@@ -2,11 +2,9 @@
 title: "Miscellaneous"
 permalink: /misc/
 layout: single
-header:
-  image: /assets/images/UC_spring.JPG
-  overlay_filter: rgba(0, 64, 128, 0)
 author_profile: true
-
+header:
+  image: /assets/images/UC_spring.jpg
 ---
 
 <!-- ## Trinket.io -->

@@ -3,8 +3,7 @@ layout: single
 title: "About Me"
 author_profile: true
 header:
-  image: /assets/images/UC_spring.JPG
-  overlay_filter: rgba(0, 64, 128, 0)
+  image: /assets/images/UC_spring.jpg
 ---
 
 I am a third-year PhD student in the Department of Linguistics at the University of Chicago. In 2015, I graduated from Lomonosov Moscow State University with a Specialist degree (≈B.A.+M.A.) in Linguistics.

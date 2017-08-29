@@ -2,10 +2,9 @@
 title: "Projects"
 permalink: /projects/
 layout: single
-header:
-  image: /assets/images/UC_spring.JPG
-  overlay_filter: rgba(0, 64, 128, 0)
 author_profile: true
+header:
+  image: /assets/images/UC_spring.jpg
 ---
 ## Minimalist Grammars and agreement
 Stabler's Minimalist Grammars provide a useful tool for modeling natural language syntax by defining grammar fragments in a very precise way. As a formalization of Chomsky's Minimalist Program, they can accommodate linguistic analyses from the field of generative syntax. However, they have no machinery for encoding agreement: while morphology can be simulated by multiplying lexical items, there is no systematic way to state generalizations and implement actual proposals. My goal is to extend Minimalist Grammars with morphological features and operations on them.

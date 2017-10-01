@@ -1,0 +1,9 @@
+/Abstract grammar for testing/
+/start/
+x;
+
+/rules/
+[r:x,m:v] :: =c +g[m:v] +f[m:w] +h x;
+[r:a,m:] :: a< -h<;
+[r:b,m:] :: =a[m:] b< -g<;
+[r:c,m:] :: =b[m:] c< -f<;

@@ -78,7 +78,7 @@ analytics:
 # Site Author
 author:
   name             :
-  avatar           : "/assets/images/IMG_0898_uncropped.JPG"
+  avatar           : "/assets/images/IMG_2498.jpg"
   bio              : "PhD student<br>Department&nbsp;of&nbsp;Linguistics<br>University of Chicago"
   location         :
   email            : "mermolaeva@uchicago.edu"
@@ -178,7 +178,7 @@ timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
-gems:
+plugins:
   # - jekyll-paginate
   # - jekyll-sitemap
   - jekyll-gist

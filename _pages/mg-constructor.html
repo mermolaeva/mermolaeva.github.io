@@ -1,0 +1,945 @@
+---
+title: "MG Constructor"
+permalink: /demos/mg-constructor/
+layout: single
+author_profile: false
+header:
+  image: /assets/images/UC_spring.jpg
+---
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.2.3/cytoscape.js"></script> -->
+
+<style>
+
+	tt, kbd, samp, pre {
+	  font-family: "courier";
+	}
+
+	.goButton {
+	background-color:#0067cd;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:none;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:sans-serif;
+	font-size:14px;
+	padding-right: 20px;
+	padding-left: 20px;
+	text-decoration:none;
+	}
+	.goButton:hover {
+		background-color:#004080;
+    border:none;
+	}
+	.goButton:active {
+		position:relative;
+		top:1px;
+    border:none;
+	}
+
+	.switch {
+	  position: relative;
+	  margin: 20px auto;
+	  height: 28px;
+	  width: 120px;
+	  background: #fff;
+	  border-radius: 4px;
+		border: 1px solid;
+		border-color: #ccc;
+	}
+
+	.switch-label {
+	  position: relative;
+	  z-index: 2;
+	  float: left;
+	  width: 58px;
+	  line-height: 26px;
+	  font-size: 12px;
+	  color: gray;
+	  text-align: center;
+	  cursor: pointer;
+	  font-family: sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	}
+	.switch-label:active {
+	  font-weight: bold;
+	}
+
+	.switch-label-off {
+	  padding-left: 2px;
+	}
+
+	.switch-label-on {
+	  padding-right: 2px;
+	}
+
+	.switch-input {
+	  display: none;
+	}
+	.switch-input:checked + .switch-label {
+	  font-weight: bold;
+	  color: #fff;
+	  -webkit-transition: 0.15s ease-out;
+	  -moz-transition: 0.15s ease-out;
+	  -o-transition: 0.15s ease-out;
+	  transition: 0.15s ease-out;
+	}
+	.switch-input:checked + .switch-label-on ~ .switch-selection {
+	  left: 58px;
+	}
+
+	.switch-selection {
+	  display: block;
+	  position: absolute;
+	  z-index: 1;
+	  top: 2px;
+	  left: 2px;
+	  width: 58px;
+	  height: 22px;
+	  background: #0067cd;
+	  border-color: #004080;
+	  border-radius: 4px;
+	  -webkit-transition: left 0.15s ease-out;
+	  -moz-transition: left 0.15s ease-out;
+	  -o-transition: left 0.15s ease-out;
+	  transition: left 0.15s ease-out;
+	}
+
+	.unselectable {
+	    -webkit-touch-callout: none;
+	    -webkit-user-select: none;
+	    -khtml-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+			font-family: "times";
+			/*cursor : pointer;*/
+	}
+	div.tarea {
+	border: 1px solid #ccc;
+  border-radius : 4px;
+	background-color: white;
+  font-family: "times";
+	min-width: 100%;
+	}
+
+  .tabbed{
+    float : left;
+    min-width : 100%;
+  }
+
+  .tabbed > input{
+    display : none;
+  }
+
+  .tabbed > section > h1{
+    float       : left;
+    box-sizing  : border-box;
+    margin      : 0;
+    padding     : 0.5em 0.5em 0;
+    overflow    : hidden;
+    font-size   : 16px;
+    font-weight : normal;
+  }
+
+  .tabbed > input:first-child + section > h1{
+    padding-left : 1em;
+  }
+
+  .tabbed > section > h1 > label{
+    display                 : block;
+    padding                 : 0.55em 0.75em;
+    border                  : 1px solid #ccc;
+    border-bottom           : none;
+    border-top-left-radius  : 4px;
+    border-top-right-radius : 4px;
+    background              : #fff;
+    cursor                  : pointer;
+       -moz-user-select     : none;
+        -ms-user-select     : none;
+    -webkit-user-select     : none;
+		font-family							: sans-serif;
+  }
+
+  .tabbed > section > div{
+    position      : relative;
+    z-index       : 1;
+    float         : right;
+    box-sizing    : border-box;
+    width         : 100%;
+    margin        : 2.5em 0 0 -100%;
+    padding-right : 0.75em;
+    padding-left  : 0.75em;
+    padding-top   : 0.5em;
+    padding-bottom: 0;
+    border        : 1px solid #ccc;
+    border-radius : 4px;
+    box-shadow    : 0 0 0.5em rgba(0,0,0,0.0625);
+    background    : #fff;
+  }
+
+  .tabbed > input:checked + section > h1{
+    position : relative;
+    z-index  : 2;
+  }
+
+  .tabbed > input:not(:checked) + section > div{
+    display : none;
+  }
+</style>
+<div>
+<p>A simple browser-based tool for manually building Minimalist Grammar derivations and visualizing expressions.</p>
+<p><i>MG Constructor</i> accepts grammars in the format used by Matthieu Giullaumin's <a href="https://bitbucket.org/mguillau/mg2mcfg">mg2mcfg converter</a>. In addition, it supports morphological features and agreement operations. Use the <i>Settings</i> tab to copy and paste a sample grammar or write your own. To find out more about MGs with agreement, check out the <a href="{{ site.baseurl }}/assets/pdfs/Ermolaeva_agreement_in_MGs.pdf">paper</a> or the <a href="{{ site.baseurl }}/projects#mgs-with-agreement">project page</a>.</p>
+<p><b>Sample grammars</b>:
+ [<a href="{{ site.baseurl }}/assets/grammars/eng1.txt" onclick="window.open(this.href);return false;">toy example</a>]
+ [<a href="{{ site.baseurl }}/assets/grammars/eng2.txt" onclick="window.open(this.href);return false;">English agreement</a>]
+ [<a href="{{ site.baseurl }}/assets/grammars/ice.txt" onclick="window.open(this.href);return false;">Icelandic agreement</a>]
+ [<a href="{{ site.baseurl }}/assets/grammars/rus.txt" onclick="window.open(this.href);return false;">Russian PPs</a>]
+</p>
+</div>
+
+<div class="tabbed">
+  <input name="tabbed" id="tabbed1" type="radio" checked>
+  <section>
+    <h1>
+      <label for="tabbed1">Main</label>
+    </h1>
+    <div>
+      <table style="min-width:100%">
+			<tr><td colspan="2" style="border:none;font-family:sans-serif;padding-bottom:0px">Available expressions</td></tr>
+      <tr>
+      <td colspan="2" align="left"; style="border:none">
+				<div class="tarea" style="height:180px;overflow:auto;resize:vertical;box-shadow: 0 0 0.5em rgba(0,0,0,0.0625)">
+				<table name="selectExpressions" id="selectExpressions" style="width:100%;font-family:times;font-size:15px" cellpadding=0 cellspacing=0>
+				</table>
+				<br>
+				</div>
+		</td>
+			</tr>
+		<!-- <tr>
+      <td style="border:none;width:170px;font-family:sans-serif;padding-top:0px;padding-bottom:0px">Display derivation as:</td>
+      <td style="border:none;padding-top:0px;padding-bottom:0px">
+      <div class="switch" style="float:left;padding:0px" name="logSwitch" id="logSwitch">
+        <input type="radio" class="switch-input" name="view2" value="log2" id="log2" checked>
+        <label for="log2" class="switch-label switch-label-off">Text log</label>
+        <input type="radio" class="switch-input" name="view2" value="tree2" id="tree2">
+        <label for="tree2" class="switch-label switch-label-on">Tree</label>
+        <span class="switch-selection"></span>
+      </div>
+    </td></tr> -->
+		<tr><td colspan="2" style="border:none;font-family:sans-serif;padding-top:1em;padding-bottom:0px">Derivation log</td></tr>
+		<tr>
+      <td colspan="2" style="border:none">
+				<div name="derivationLogOuter" id="derivationLogOuter" class="tarea" style="height:180px;overflow:auto;resize:vertical;box-shadow: 0 0 0.5em rgba(0,0,0,0.0625)">
+	        <div name="derivationLog" id="derivationLog" style="padding:4px;font-family:times;font-size:15px">
+					</div>
+					<!-- <div id="derivationTree" style="width:100%;height:100%;border:none"></div> -->
+				</div>
+      </td>
+      </tr>
+			<tr><td colspan="2" style="border:none;padding-top:0px;padding-bottom:0px"><hr>
+        <span style="padding:0px; display:table-cell;height:25px;font-size:14px;font-family:sans-serif" id="logStatusBar"></span></td></tr>
+      </table>
+    </div>
+  </section>
+  <input name="tabbed" id="tabbed2" type="radio">
+  <section>
+    <h1>
+      <label for="tabbed2">Settings</label>
+    </h1>
+    <div>
+      <table border="0" style="min-width:100%">
+			<tr style="padding:0px"><td colspan="2" style="border:none;font-family:sans-serif;padding-bottom:0px">Grammar editor</td></tr>
+      <tr style="padding:0px">
+      <td colspan="2" style="border:none">
+        <textarea name="grammarEditor" id="grammarEditor" style="height:300px;min-width:100%;cursor:default;resize:vertical;padding:4px;font-family:courier;font-size:15px" cols="40" spellcheck=false>/English agreement/
+/start/
+t;
+
+/rules/
+[r:this,num:,per:,case:] :: =n[case:]< d -k[num:sg,per:3]<;
+[r:boy,num:sg,per:3,case:] :: n[num:sg,per:3]<;
+[r:walk] :: =d v;
+[r:prs,num:,per:] :: =>v +k[case:str]< t;</textarea>
+      </td>
+      </tr>
+			<tr><td style="border:none;width:190px;font-family:sans-serif;padding-top:0px;padding-bottom:0px">Agreement display style:</td>
+        <td style="border:none;padding-top:0px;padding-bottom:0px">
+  				<div class="switch" style="float:left;padding:0px" name="displaySwitch" id="displaySwitch">
+  					<input type="radio" class="switch-input" name="view1" value="concise2" id="concise2" checked>
+  					<label for="concise2" class="switch-label switch-label-off">Concise</label>
+  					<input type="radio" class="switch-input" name="view1" value="verbose2" id="verbose2">
+  					<label for="verbose2" class="switch-label switch-label-on">Verbose</label>
+  					<span class="switch-selection"></span>
+  				</div>
+  			</td>
+      </tr>
+      <tr>
+      <td colspan="2" align="left"; style="border:none;padding-top:0px">
+				<input class="goButton" name="btnCheckGrammar" style="height:30px" type="button" onclick="javaScript:parseGrammar();clickRows('');" id="btnCheckGrammar" value="Use this grammar" /></td></tr>
+				<tr><td colspan="2" style="border:none;padding-top:0px;padding-bottom:0px"><hr>
+				<span style="display:table-cell;font-size:14px;font-family:sans-serif" id="editorStatusBar"></span></td>
+      </tr>
+      </table>
+    </div>
+  </section>
+</div>
+
+<script type="text/javaScript">
+
+	window.onerror=function(){
+	document.getElementById('editorStatusBar').innerHTML = "Something is wrong &mdash; check the grammar";
+	return true
+	}
+
+	lexIDCounter = 0;
+	symbols = ["+", "-", "<", ">", "=", "*"];
+	combinations = {};
+	grammarStart = "";
+	verbose = true;
+	var lexAll;
+	var expList=document.getElementById('selectExpressions');
+	var log = document.getElementById("derivationLog");
+	var treeLog = document.getElementById("derivationTree");
+	var out = document.getElementById("derivationLogOuter");
+	var logStatus = document.getElementById("logStatusBar");
+
+	function pprintExp(exp){
+		var result = []
+		exp.forEach(function(item){
+			result.push(item.show());
+		});
+		return result.join(", ");
+	}
+
+	function Chain (isinit, head, features, atomic, spec, comp, dep=["off"]) {
+		this.isinit = isinit;
+		this.spec = spec;
+		this.head = head;
+		this.comp = comp;
+		this.atomic = atomic;
+		this.features = features;
+		this.show = showChain;
+		this.dep = dep;
+	}
+
+	function showChain() {
+		var prettyFeatures = []
+		this.features.forEach(function(item){
+			prettyFeatures.push(item.show());
+		});
+		var prettyType = this.atomic==true ? "::" : ":";
+    var prettyMain;
+    if(this.isinit){
+      prettyMain = `&#12296;${pprintList(this.spec)}, ${pprintList(this.head)}, ${pprintList(this.comp)}&#12297;`;
+    }
+    else{
+      prettyMain = `${pprintList(this.head)}`;
+    }
+      var full = `${prettyMain} ${prettyType} ${prettyFeatures.join(" ")}`;
+			if(verbose){full += ` (<kbd>${this.dep.join(", ")}</kbd>)`;}
+			return full;
+      // return `${prettyMain} ${prettyType} <math>${prettyFeatures.join("<mspace width=\"4px\" />")}</math>`;
+	}
+
+	function SynFeature (type, name, channel, bundle) {
+		this.type = type;
+		this.name = name;
+		this.channel = channel;
+		this.bundle = bundle;
+		this.show = showSynFeature;
+	}
+
+	function showSynFeature(){
+		var prettyChannel = this.channel==true ? "&larr;" : "";
+		// var prettyChannel = this.channel==true ? "<sub>&larr;</sub>" : "";
+		if (Object.keys(this.bundle).length == 0){
+			readyBundle = "";
+		}
+		else{
+			readyBundle = `${pprintBundle(this.bundle)}&rarr;`;
+			// readyBundle = `<sup>${pprintBundle(this.bundle)}&rarr;</sup>`;
+		}
+		return `<math><msubsup><mn><kbd>${this.type}${this.name}</kbd></mn> <mn>${prettyChannel}</mn> <mn>${readyBundle}</mn></msubsup></math>`;
+		// return `<kbd>${this.type}${this.name}</kbd>${prettyChannel}${readyBundle}`;
+	}
+
+	function MorFeature (value, rewr) {
+		this.value = value;
+		this.rewr = rewr;
+	}
+
+	function pprintBundle(inputBundle){
+		var result = [];
+		for(var item in inputBundle){
+			if(item == "r"){
+				full = `<span style=\"font-variant:small-caps\">${inputBundle[item].value}</span>`;
+			}
+			else{
+				full = `<kbd>${item}</kbd>:<i>${inputBundle[item].value}</i>`;
+				if(verbose){full += `/<kbd>${inputBundle[item].rewr}</kbd>`};
+			}
+			result.push(full);
+		}
+		// return katex.renderToString("\\ddot{a}"); // how KaTeX can be made to work
+		return `[${result.join("&nbsp;")}]`;
+		// return `<mrow><mo fence="true">[</mo><mtable rowspacing="0pt"><mtr>${result.join("</mtr> <mtr>")}</mtr></mtable><mo>]</mo></mrow>`;
+	}
+
+	function pprintList(bundleList){
+		if (bundleList.length == 0){return "&#949;"}
+		else{
+			var result = [];
+			bundleList.forEach(function(item){
+				result.push(pprintBundle(item));
+			});
+			return result.join("");
+		}
+	}
+
+	function mrg1or2(exp1, exp2){
+		var nexp = agreeMrg(exp1, exp2);
+		// alert("inside mrg1or2");
+		// var nexp1=exp1, nexp2=exp2;
+		var nexp1=nexp[0], nexp2=nexp[1];
+		var newSpec, newComp;
+		if (nexp1[0].atomic == true){
+			newSpec = nexp1[0].spec;
+			newComp = nexp1[0].comp.concat(nexp2[0].spec).concat(nexp2[0].head).concat(nexp2[0].comp);
+		}
+		else{
+			newSpec = nexp2[0].spec.concat(nexp2[0].head).concat(nexp2[0].comp).concat(nexp1[0].spec);
+			newComp = nexp1[0].comp;
+		}
+		var newSubexp = new Chain(true, nexp1[0].head, nexp1[0].features.slice(1,), false, newSpec, newComp, nexp1[0].dep);
+		return [newSubexp].concat(nexp1.slice(1,)).concat(nexp2.slice(1,));
+	}
+
+	function mrg1_hm(exp1, exp2){
+		var nexp = agreeMrg(exp1, exp2);
+		// var nexp1=exp1, nexp2=exp2;
+		var nexp1=nexp[0], nexp2=nexp[1];
+		var newSubexp = new Chain(true, nexp2[0].head.concat(nexp1[0].head), nexp1[0].features.slice(1,), false, nexp1[0].spec, nexp1[0].comp.concat(nexp2[0].spec).concat(nexp2[0].comp), nexp1[0].dep);
+		return [newSubexp].concat(nexp1.slice(1,)).concat(nexp2.slice(1,));
+	}
+
+	function mrg3(exp1, exp2){
+		var nexp = agreeMrg(exp1, exp2);
+		// var nexp1=exp1, nexp2=exp2;
+		var nexp1=nexp[0], nexp2=nexp[1];
+		var newSubexp = new Chain (true, nexp1[0].head, nexp1[0].features.slice(1,), false, nexp1[0].spec, nexp1[0].comp, nexp1[0].dep);
+		var newMover = new Chain (false, nexp2[0].spec.concat(nexp2[0].head).concat(nexp2[0].comp), nexp2[0].features.slice(1,), false, [], [], nexp2[0].dep);
+		return [newSubexp].concat(nexp1.slice(1,)).concat([newMover]).concat(nexp2.slice(1,));
+	}
+
+	function mrg3_hm(exp1, exp2){
+		var nexp = agreeMrg(exp1, exp2);
+		// var nexp1=exp1, nexp2=exp2;
+		var nexp1=nexp[0], nexp2=nexp[1];
+		var newSubexp = new Chain (true, nexp2[0].head.concat(nexp1[0].head), nexp1[0].features.slice(1,), false, nexp1[0].spec, nexp1[0].comp, nexp1[0].dep);
+		var newMover = new Chain (false, nexp2[0].spec.concat(nexp2[0].comp), nexp2[0].features.slice(1,), false, [], [], nexp2[0].dep);
+		return [newSubexp].concat(nexp1.slice(1,)).concat([newMover]).concat(nexp2.slice(1,));
+	}
+
+	function processMerge(exp1, exp2){
+		if (exp1[0].features[0].type == "="){
+			if(willMove(exp2, 0)){
+				return mrg3(exp1, exp2);
+			}
+			else{
+				return mrg1or2(exp1, exp2);
+			}
+		}
+		else if (exp1[0].features[0].type == "=>" && exp1[0].atomic == true){
+			if(willMove(exp2, 0)){return mrg3_hm(exp1, exp2);}
+			else{return mrg1_hm(exp1, exp2);}
+		}
+		else{logStatus.innerHTML = "Merge impossible: wrong selector type";}
+	}
+
+	function processMove(exp){
+		var licensor = exp[0].features[0].name;
+		var indices = [];
+		var isStar = false;
+		for (var i=1; i<exp.length; i++){
+			isStar = (exp[i].features[0].type == "*");
+			if ((exp[i].features[0].type == "-" || isStar) && exp[i].features[0].name == licensor){
+				indices.push(i);
+			}
+		}
+		if (indices.length == 1){
+			ind = indices[0];
+			result = []
+			if (willMove(exp, ind)){result.push(mv2(exp, ind));}
+			else{result.push(mv1(exp, ind));}
+			if(isStar){result.push(mvStar(exp, ind));}
+			return result;
+		}
+		else{
+			logStatus.innerHTML = "Move impossible: SMC violation";
+			return undefined;
+		}
+	}
+
+	function willMove(exp, ind){
+		if(exp[ind].features.length > 1){
+			return exp[ind].features[1];
+		}
+		else{return undefined;}
+	}
+
+	function mv1(exp, ind){
+		// var nexp = exp;
+		var nexp = agreeMv(exp, ind, false);
+		newSubexp = new Chain(true, nexp[0].head, nexp[0].features.slice(1,), false, nexp[ind].head.concat(nexp[0].spec), nexp[0].comp, nexp[0].dep);
+		return [newSubexp].concat(nexp.slice(1,ind)).concat(nexp.slice(ind+1,));
+	}
+
+	function mv2(exp, ind){
+		// var nexp = exp;
+		var nexp = agreeMv(exp, ind, false);
+		newSubexp = new Chain(true, nexp[0].head, nexp[0].features.slice(1,), false, nexp[0].spec, nexp[0].comp, nexp[0].dep);
+		newMover = new Chain(false, nexp[ind].head, nexp[ind].features.slice(1,), false, [], [], nexp[ind].dep);
+		return [newSubexp].concat(nexp.slice(1,ind)).concat([newMover]).concat(nexp.slice(ind+1,));
+	}
+
+	function mvStar(exp, ind){
+		// var nexp = exp;
+		var nexp = agreeMv(exp, ind, true);
+		newSubexp = new Chain(true, nexp[0].head, nexp[0].features.slice(1,), false, nexp[0].spec, nexp[0].comp, nexp[0].dep);
+		newMover = new Chain(false, nexp[ind].head, nexp[ind].features, false, [], [], nexp[ind].dep);
+		return [newSubexp].concat(nexp.slice(1,ind)).concat([newMover]).concat(nexp.slice(ind+1,));
+	}
+
+	function agreeMrg(exp1, exp2){
+		// alert("Inside agreeMrg");
+		var phi = exp2[0].features[0].channel ? exp1[0].features[0].bundle : {};
+		var psi = exp1[0].features[0].channel ? exp2[0].features[0].bundle : {};
+		var nextLee = willMove(exp2, 0);
+		var nexp1 = [];
+		var nexp2 = [];
+		exp1.forEach(function(item){
+			nexp1.push(chainOp(partial(agreeDown, psi), item));
+		});
+		if(nextLee){
+			exp2.forEach(function(item){
+				newChain = chainOp(partial(agreeUp, nextLee.name, phi), item);
+				newChain.dep.unshift(nextLee.name);
+				nexp2.push(newChain);
+			});
+		}
+		else{
+			exp2.forEach(function(item){
+				nexp2.push(chainOp(partial(agreeUp, item.dep[0], phi), item));
+			});
+		}
+		return [nexp1, nexp2];
+	}
+
+	function agreeMv(exp, ind, isStar){
+		var phi = (exp[ind].features[0].channel && !(isStar)) ? exp[0].features[0].bundle : {};
+		var psi = (exp[0].features[0].channel && !(isStar)) ? exp[ind].features[0].bundle : {};
+		var currLee = exp[ind].features[0].name;
+		var nextLee = willMove(exp, ind);
+		var nexp = [];
+		for(var i = 0; i < exp.length; i++){
+			var indCurrLee = exp[i].dep.indexOf(currLee);
+			if (indCurrLee == -1){
+				nexp.push(chainOp(partial(agreeDown, psi), exp[i]));
+			}
+			else{
+				var depHead = exp[i].dep.slice(0, indCurrLee+1);
+				var depTail = exp[i].dep.slice(indCurrLee+1, );
+				if(nextLee){depTail.unshift(nextLee.name);}
+				var activated = chainOp(partial(act, depHead), exp[i]);
+				nexp.push(chainOp(partial(agreeUp, depTail[0], phi), activated));
+			}
+		}
+		return nexp;
+	}
+
+	function partial(f) {
+  var args = Array.prototype.slice.call(arguments, 1);
+  return function(){return f.apply(this, args.concat(Array.prototype.slice.call(arguments, 0)));};
+	}
+
+	function agreeUp(state, goal, bundle){ // selectee/licensee gets values from selector/licensor
+		// alert(pprintBundle(bundle));
+		// alert(pprintBundle(goal));
+    // PROBLEM: lack of agreement here!
+		newBundle = {};
+		for(var item in bundle){
+			// alert([item, bundle[item].value, bundle[item].rewr]);
+			if(bundle[item].rewr == "on"){
+				if(goal[item] == undefined){
+					// alert("Undefined in goal");
+					newBundle[item] = new MorFeature(bundle[item].value, state);
+				}
+				else if(goal[item].rewr == "on"){
+					// alert("Active in goal");
+					newBundle[item] = new MorFeature(goal[item].value, "on");
+				}
+				else if(goal[item].rewr == "off"){
+					// alert("Inactive in goal");
+					newBundle[item] = new MorFeature(goal[item].value, state);
+				}
+				else{} // exception: impossible rewritability in goal bundle
+			}
+			else{newBundle[item] = bundle[item];}
+		}
+		// alert(pprintBundle(newBundle));
+		return newBundle;
+	}
+
+	function agreeDown(goal, bundle){ // selector/licensor gets values from selectee/licensee
+		newBundle = {};
+		for(var item in bundle){
+			if(bundle[item].rewr == "on" && !(goal[item] == undefined)){ // rewritable in probe and defined in goal
+				newBundle[item] = new MorFeature(goal[item].value, "on");
+			}
+			else{
+				newBundle[item] = bundle[item];
+			}
+		}
+		return newBundle;
+	}
+
+	function act(states, bundle){// activate every feature in bundle b if its rewritability is in states
+		newBundle = {};
+		for(var item in bundle){
+			if(states.includes(bundle[item].rewr)){
+				newBundle[item] = new MorFeature (bundle[item].value, "on");
+			}
+			else{
+				newBundle[item] = new MorFeature (bundle[item].value, bundle[item].rewr);
+			}
+		}
+		return newBundle;
+	}
+
+	function chainOp(f, c){// apply function f over bundles to every bundle in chain c
+		var procFeatures = [];
+		c.features.forEach(function(item){
+			procFeatures.push(new SynFeature (item.type, item.name, item.channel, f(item.bundle)));
+		});
+		return new Chain (c.isinit, c.head.map(f), procFeatures, c.atomic, c.spec.map(f), c.comp.map(f), c.dep);
+	}
+
+	function parseMorBundle(bundleRaw){
+		var bundleProc = {};
+		bundleRaw.forEach(function(item){
+			bundleSplit = item.split(":");
+			var currValue;
+			var currRewr;
+			if (bundleSplit[1]==""){
+				currValue = "&#949;";
+				currRewr = "on";
+			}
+			else{
+				currValue = bundleSplit[1];
+				currRewr = "off";
+			}
+			bundleProc[bundleSplit[0]] = new MorFeature(currValue, currRewr);
+		});
+		return bundleProc;
+	}
+
+	function parseGrammar(){
+		lexIDCounter = 0;
+		lexAll = {};
+		combinations = {};
+		if(document.getElementById('verbose2').checked){verbose = true;}
+		else{verbose = false;}
+		var status = document.getElementById('editorStatusBar');
+		status.innerHTML = "";
+		expList.innerHTML = "";
+		log.innerHTML = "";
+		logStatus.innerHTML = "Select an expression to start";
+		lines = document.getElementById('grammarEditor').value.split('\n');
+		grammarStart = "";
+		lines.forEach(function(item){
+			lexID = ""
+			if (item != "" && item[0] != "/"){
+				var currentLine = item.slice(0, -1);
+				if (grammarStart == ""){
+					grammarStart = currentLine;
+				}
+				else{
+					var pieces = currentLine.split(":: ");
+					var headBundle = [];
+					var lexID = undefined;
+					var headRaw = pieces[0];
+					if (headRaw.slice(-1) == " "){headRaw = headRaw.slice(0,-1);}
+					if (headRaw[0] == "[" && headRaw.slice(-1) == "]"){ // head consists of features
+						headBundle = parseMorBundle(headRaw.slice(1, -1).split(","));
+						var headBundleRoot = headBundle["r"];
+						if(!(headBundleRoot == undefined)){
+							lexID = headBundleRoot.value;
+						}
+					}
+					else if (headRaw != ""){ // head contains at least something
+						headBundle = parseMorBundle([`r:${headRaw}`]);
+						lexID = headRaw;
+					}
+					if(lexID == undefined){
+						lexID = `E${lexIDCounter.toString()}`;
+						lexIDCounter += 1;
+					}
+					while(Object.keys(lexAll).includes(lexID)){
+						lexID += "\'"; // ensure ID uniqueness
+					}
+					var rawFeatures = pieces[1].split(" "); // unprocessed syntactic features
+					var procFeatures = [];
+					rawFeatures.forEach(function(item){
+						var currentFeat = item;
+						var currentChannel = false;
+						var currentSynType = "";
+						var currentSynName = "";
+						var currentBundle = [];
+						var currentSyn;
+						if (currentFeat.slice(-1) == "<"){
+							currentChannel = true;
+							currentFeat = currentFeat.slice(0,-1);
+						}
+						if (currentFeat.slice(-1) == "]"){
+							currentFeat = currentFeat.slice(0,-1);
+							var currentPieces = currentFeat.split("[");
+							currentBundle = parseMorBundle(currentPieces[1].split(","));
+							currentSyn = currentPieces[0];
+						}
+						else{
+							currentSyn = currentFeat;
+						}
+						for(var s = 0;s < currentSyn.length;s++){
+							if(symbols.includes(currentSyn[s])){
+								currentSynType += currentSyn[s];
+							}
+							else{
+								currentSynName += currentSyn[s];
+							}
+						}
+						procFeatures.push(new SynFeature(currentSynType, currentSynName, currentChannel, currentBundle));
+					});
+					addExp([new Chain (true, [headBundle,], procFeatures, true, [], [])], lexID);
+				}
+			}
+		});
+	status.innerHTML = "The  grammar looks OK &mdash; try it out!";
+	}
+
+	function isWellFormed(exp){
+		return (exp.length == 1 && exp[0].features.length == 1 && exp[0].features[0].type == "" && exp[0].features[0].name == grammarStart);
+	}
+
+	function addExp(exp, lexID){
+    // var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
+		lexAll[lexID] = exp;
+		var row0 = expList.insertRow(-1);
+		var cell0 = row0.insertCell(0);
+		var cell1 = row0.insertCell(1);
+		cell0.className = "unselectable";
+    var styleID = "padding:5px";
+    if(isWellFormed(exp)){
+      styleID = "border:1.5px;border-style:solid;border-color:#408000;border-radius:4px;padding:1.5px;margin:2px";
+    }
+		cell0.innerHTML = `<span style=\"${styleID}\">(<kbd>${lexID}</kbd>)</span>`;
+		cell1.className = "unselectable";
+		cell1.innerHTML = pprintExp(exp);
+		cell1.id = lexID;
+    // if(isScrolledToBottom){out.scrollTop = out.scrollHeight - out.clientHeight;}
+	}
+
+	function clickRows(mergeSelected){// make all rows in the table clickable; mergeSelected==false
+		var isScrolledToBottom;
+		var rows = expList.rows;
+		if (mergeSelected == ""){
+			state0(rows, log, mergeSelected);
+		}
+		else{
+			state1(rows, log, out, mergeSelected);
+		}
+}
+
+	function isType(itemID, goalType){
+		return lexAll[itemID][0].features[0].type == goalType;
+	}
+
+	function state0(rows, log, mergeSelected){
+		for (var i = 0; i < rows.length; i++) {
+			var thisID = rows[i].cells[1].id;
+			if(isType(thisID, "=") || isType(thisID, "=>")){
+				rows[i].style.color = "#000";
+				rows[i].style.backgroundColor = "#fff";
+				rows[i].style.cursor = "pointer";
+				rows[i].onclick = (function() {
+					return function() {
+						logStatus.innerHTML = `Selected expression: <kbd>${this.cells[1].id}</kbd>`;
+						this.style.backgroundColor = "#004080";
+						this.style.color = "#fff";
+						clickRows(this.cells[1].id);
+					}
+				})();
+			}
+			else if(isType(thisID, "+")){
+				rows[i].style.color = "#000";
+				rows[i].style.backgroundColor = "#fff";
+				rows[i].style.cursor = "pointer";
+				rows[i].onclick = (function() {
+					return function() {
+						var newIDs = undefined;
+						var moveSelected = this.cells[1].id;
+						if(Object.keys(combinations).includes(moveSelected)){
+							newIDs = combinations[moveSelected];
+							logStatus.innerHTML = `Existing expressions: <kbd>${newIDs}</kbd>`;
+						}
+						else{
+							var moveResult = processMove(lexAll[moveSelected]);
+							if(moveResult){
+								newIDs = [];
+								moveResult.forEach(function(item){
+									var newID = `E${lexIDCounter.toString()}`;
+									lexIDCounter += 1;
+									addExp(item, newID);
+									newIDs.push(newID);
+								});
+								combinations[moveSelected] = newIDs;
+								logStatus.innerHTML = `New expressions: <kbd>${newIDs}</kbd>`;
+							}
+							else{
+								this.cells[0].innerHTML = `<span style=\"border:1.5px;border-style:solid;border-color:#cd0000;border-radius:4px;padding:1.5px;margin:2px\">(<kbd>${this.cells[1].id}</kbd>)</span>`;
+							}
+						}
+            var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
+						if(newIDs){
+						log.innerHTML += `<p><b>move</b> (<kbd>${moveSelected}</kbd>) = <kbd>${newIDs[0]}</kbd> = <br>${pprintExp(lexAll[newIDs[0]])}</p>`;
+            if (newIDs.length > 1){
+              log.innerHTML += `<p><b>move*</b> (<kbd>${moveSelected}</kbd>) = <kbd>${newIDs[1]}</kbd> = <br>${pprintExp(lexAll[newIDs[1]])}</p>`;
+            }
+						if(isScrolledToBottom){out.scrollTop = out.scrollHeight - out.clientHeight;}
+						clickRows("");
+						}
+				}
+				})();
+			}
+			else{rows[i].style.color = "#ccc"; rows[i].style.backgroundColor = "#fff"; rows[i].onclick = ''; rows[i].style.cursor = "auto";}
+		}
+	}
+
+	function state1(rows, log, out, mergeSelected){
+		for (var i = 0; i < rows.length; i++) {
+			var thisID = rows[i].cells[1].id;
+			var thisFirst = lexAll[thisID][0].features[0];
+			if(thisFirst.type == "" && thisFirst.name == lexAll[mergeSelected][0].features[0].name){
+				rows[i].style.color = "#000";
+				rows[i].style.backgroundColor = "#fff";
+				rows[i].style.cursor = "pointer";
+				rows[i].onclick = (function() {
+					return function() {
+					selectee = this.cells[1].id;
+					var newID = undefined;
+					if(Object.keys(combinations).includes(mergeSelected)){
+						if(Object.keys(combinations[mergeSelected]).includes(selectee)){
+							newID = combinations[mergeSelected][selectee];
+							logStatus.innerHTML = `Existing expressions: <kbd>${newID}</kbd>`;
+						}
+					}
+					else{combinations[mergeSelected] = {};}
+					if(!(newID)){
+						newID = `E${lexIDCounter.toString()}`;
+						lexIDCounter += 1;
+						combinations[mergeSelected][selectee] = newID;
+						mergeResult = processMerge(lexAll[mergeSelected], lexAll[selectee]);
+						addExp(mergeResult, newID);
+						logStatus.innerHTML = `New expressions: <kbd>${newID}</kbd>`;
+					}
+          var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
+					log.innerHTML += `<p><b>merge</b> (<kbd>${mergeSelected}</kbd>, <kbd>${selectee}</kbd>) = <kbd>${newID}</kbd> = <br>${pprintExp(lexAll[newID])}</p>`; // output
+					if(isScrolledToBottom){out.scrollTop = out.scrollHeight - out.clientHeight;}
+					this.style.backgroundColor = "#fff";
+					this.style.color = "#000";
+					clickRows("");
+					}
+				})(i);
+			}
+			else if (thisID == mergeSelected){
+				rows[i].onclick = (function() {
+					return function() {
+						this.style.backgroundColor = "#fff";
+						this.style.color = "#000";
+						clickRows("");
+						logStatus.innerHTML = "";
+					}
+				})();
+			}
+			else{rows[i].style.color = "#ccc"; rows[i].style.backgroundColor = "#fff"; rows[i].onclick =''; rows[i].style.cursor = "auto";}
+		}
+	}
+
+window.onload = function() {
+	javaScript:parseGrammar();
+	clickRows("");
+	// treeLog.style.display = "none"
+	// var asLog = document.getElementById("log2");
+	// var asTree = document.getElementById("tree2");
+	// asLog.onclick = function(){
+	// 	log.style.display = "block";
+	// 	treeLog.style.display = "none";
+	// }
+	// asTree.onclick = function(){
+	// 	treeLog.style.display = "block";
+	// 	log.style.display = "none";
+	// }
+}
+
+// var cy = cytoscape({
+//   container: document.getElementById('derivationTree'), // container to render in
+//
+//   elements: [ // list of graph elements to start with
+//     { // node a
+//       data: { id: 'a' }
+//     },
+//     { // node b
+//       data: { id: 'b' }
+//     },
+//     { // edge ab
+//       data: { id: 'ab', source: 'a', target: 'b' }
+//     }
+//   ],
+//
+//   style: [ // the stylesheet for the graph
+//     {
+//       selector: 'node',
+//       style: {
+//         'background-color': '#666',
+//         'label': 'data(id)'
+//       }
+//     },
+//
+//     {
+//       selector: 'edge',
+//       style: {
+//         'width': 3,
+//         'line-color': '#ccc',
+//         'target-arrow-color': '#ccc',
+//         'target-arrow-shape': 'triangle'
+//       }
+//     }
+//   ],
+//
+//   layout: {
+//     name: 'grid',
+//     rows: 1
+//   }
+//
+// });
+// cy.nodes().lock();
+
+</script>

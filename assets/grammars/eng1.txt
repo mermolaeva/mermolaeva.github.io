@@ -1,0 +1,9 @@
+/English toy example/
+/start/
+t;
+
+/rules/
+this :: =n d -k;
+boy :: n;
+walk :: =d v;
+-s :: =>v +k t;

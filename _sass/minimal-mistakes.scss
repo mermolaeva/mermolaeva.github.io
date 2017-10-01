@@ -25,7 +25,7 @@ $indent-var                 : 1.3em !default;
 /* system typefaces */
 $serif                      : Palatino, Georgia, Times, serif !default;
 $sans-serif                 : "Lucida Grande", "Helvetica Neue", -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", Arial, sans-serif !default;
-$monospace                  : Monaco, Consolas, "Lucida Console", monospace !default;
+$monospace                  : Courier, Monaco, Consolas, "Lucida Console", monospace !default;
 
 /* sans serif typefaces */
 $sans-serif-narrow          : $sans-serif !default;
@@ -71,8 +71,9 @@ $body-color                 : #fff !default;
 $background-color           : #fff !default;
 $code-background-color      : #fafafa !default;
 $code-background-color-dark : $light-gray !default;
-$text-color                 : $dark-gray !default;
-$border-color               : $lighter-gray !default;
+$text-color                 : #000 !default;
+// $text-color                 : $dark-gray !default;
+$border-color               : #ccc !default;
 
 $primary-color              : #7a8288 !default;
 $success-color              : #62c462 !default;
@@ -109,7 +110,7 @@ $link-color                 : $bblue !default;
 $link-color-hover           : mix(#000, $link-color, 35%) !default;
 $link-color-visited         : mix(#fff, $link-color, 35%) !default;
 $masthead-link-color        : $primary-color !default;
-$masthead-link-color-hover  : mix(#000, $primary-color, 35%) !default;
+$masthead-link-color-hover  : mix(#000, $primary-color, 100%) !default;
 $navicon-link-color-hover   : mix(#fff, $primary-color, 75%) !default;
 
 /*
@@ -127,7 +128,7 @@ $x-large                    : 1280px !default;
    Grid
    ========================================================================== */
 
-$right-sidebar-width-narrow : 200px !default;
+$right-sidebar-width-narrow : 250px !default; // modified from 200px
 $right-sidebar-width        : 300px !default;
 $right-sidebar-width-wide   : 400px !default;
 
@@ -140,8 +141,10 @@ $border-radius              : 4px !default;
 $box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125) !default;
 $navicon-width              : 1.5rem !default;
 $navicon-height             : 0.25rem !default;
-$global-transition          : all 0.2s ease-in-out !default;
-$intro-transition           : intro 0.3s both !default;
+// $global-transition          : all 0.2s ease-in-out !default;
+// $intro-transition           : intro 0.3s both !default;
+$global-transition          : none;
+$intro-transition           : none;
 //
 
 /* Mixins and functions */
@@ -156,11 +159,11 @@ $intro-transition           : intro 0.3s both !default;
 // @import "minimal-mistakes/reset";
 // @import "minimal-mistakes/base";
 @import "minimal-mistakes/forms";
-@import "minimal-mistakes/tables";
+// @import "minimal-mistakes/tables";
 @import "minimal-mistakes/animations";
 
 /* Components */
-@import "minimal-mistakes/buttons";
+// @import "minimal-mistakes/buttons";
 @import "minimal-mistakes/notices";
 // @import "minimal-mistakes/masthead";
 // @import "minimal-mistakes/navigation";
@@ -547,11 +550,12 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
 
   a {
     color: inherit;
-    text-decoration: underline dotted;
+    // text-decoration: none;
+    text-decoration: dotted underline;
 
-    // &:hover {
-      // text-decoration: underline;
-    // }
+    &:hover {
+      // text-decoration: dotted underline;
+    }
   }
 
   .fa {
@@ -1263,12 +1267,12 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
   @include breakpoint($large) {
     float: right;
     width: calc(100% - #{$right-sidebar-width-narrow});
-    padding-right: $right-sidebar-width-narrow;
+    padding-right: calc(#{$right-sidebar-width-narrow}/3); // right margin of the page
   }
 
   @include breakpoint($x-large) {
     width: calc(100% - #{$right-sidebar-width});
-    padding-right: $right-sidebar-width;
+    padding-right: calc(#{$right-sidebar-width}/3);
   }
 
   .page__inner-wrap {
@@ -1331,10 +1335,11 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
   }
 
   a {
+    // text-decoration: none;
     text-decoration: dotted underline;
 
     &:hover {
-      // text-decoration: none;
+      // text-decoration: dotted underline;
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);
@@ -2121,10 +2126,11 @@ textarea {
     padding-bottom: 2px;
     color: inherit;
     font-size: $type-size-5;
+    // text-decoration: none;
     text-decoration: dotted underline;
 
     &:hover {
-      // text-decoration: none;
+      // text-decoration: dotted underline;
     }
   }
 }
@@ -2648,5 +2654,209 @@ a.reversefootnote {
    .masthead,
    .page__footer {
     position: static;
+  }
+}
+
+#selectable-1 .ui-selecting { background: #707070 ; }
+#selectable-1 .ui-selected { background: #EEEEEE; color: #000000; }
+#selectable-1 { list-style-type: none; margin: 0;
+   padding: 0; width: 20%; }
+#selectable-1 li { margin: 3px; padding: 0.4em;
+   font-size: 16px; height: 18px; }
+.ui-widget-content {
+   background: #cedc98;
+   border: 1px solid #DDDDDD;
+   color: #333333;
+}
+
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+
+table {
+  margin-bottom: 1em;
+  width: 100%;
+  font-family: $global-font-family;
+  font-size: $type-size-6;
+  border-collapse: collapse;
+
+  & + table {
+    margin-top: 1em;
+  }
+}
+
+thead {
+  background-color: $lighter-gray;
+  border-bottom: 2px solid $light-gray;
+}
+
+th {
+  padding: 0.5em;
+  font-weight: bold;
+  text-align: left;
+}
+
+td {
+  padding: 0.1em;
+  border-bottom: 1px solid $light-gray;
+}
+
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+/*
+   Default button
+   ========================================================================== */
+
+.btn {
+  /* default button */
+  display: inline-block;
+  margin-bottom: 0.25em;
+  // padding: 0.5em 1em;
+  color: #fff !important;
+  font-family: $sans-serif;
+  font-size: $type-size-6;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: $primary-color;
+  border: 0 !important;
+  border-radius: $border-radius;
+  cursor: pointer;
+
+  &:hover {
+    background-color: mix(white, #000, 20%);
+  }
+
+  .icon {
+    margin-right: 0.5em;
+  }
+
+  .icon + .hidden {
+    margin-left: -0.5em; /* override for hidden text*/
+  }
+
+  /* fills width of parent container */
+
+  &--block {
+    display: block;
+    width: 100%;
+
+    + .btn--block {
+      margin-top: 0.25em;
+    }
+  }
+
+  /* for dark backgrounds */
+
+  &--inverse {
+    color: $gray !important;
+    border: 1px solid $light-gray !important; /* override*/
+    background-color: #fff;
+
+    &:hover {
+      color: #fff !important;
+      border-color: $gray;
+    }
+  }
+
+  /* light outline */
+
+  &--light-outline {
+    border: 1px solid #fff !important; /* override*/
+    background-color: transparent;
+  }
+
+  /* information */
+
+  &--info {
+    background-color: $info-color;
+
+    &:hover {
+      background-color: mix(#000, $info-color, 20%);
+    }
+  }
+
+  /* warning */
+
+  &--warning {
+    background-color: $warning-color;
+
+    &:hover {
+      background-color: mix(#000, $warning-color, 20%);
+    }
+  }
+
+  /* success */
+
+  &--success {
+    background-color: $success-color;
+
+    &:hover {
+      background-color: mix(#000, $success-color, 20%);
+    }
+  }
+
+  /* danger */
+
+  &--danger {
+    background-color: $danger-color;
+
+    &:hover {
+      background-color: mix(#000, $danger-color, 20%);
+    }
+  }
+
+  /* disabled */
+
+  &--disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    box-shadow: none;
+    opacity: 0.65;
+  }
+
+  /* social buttons */
+
+  $social:
+  (facebook, $facebook-color),
+  (twitter, $twitter-color),
+  (google-plus, $google-plus-color),
+  (linkedin, $linkedin-color);
+
+  @each $socialnetwork, $color in $social {
+    &--#{$socialnetwork} {
+      background-color: $color;
+
+      &:hover {
+        background-color: mix(#000, $color, 20%);
+      }
+    }
+  }
+
+  /* extra large button */
+
+  &--x-large {
+    font-size: $type-size-4;
+  }
+
+  /* large button */
+
+  &--large {
+    font-size: $type-size-5;
+  }
+
+  /* small button */
+
+  &--small {
+    font-size: $type-size-7;
   }
 }

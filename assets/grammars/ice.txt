@@ -1,0 +1,15 @@
+/Icelandic agreement/
+/start/
+t;
+
+/rules/
+many~ :: d[num:pl] *k[num:sg];
+few~ :: d[num:pl] -k[num:sg];
+
+find :: =sc[num:]< =d V[num:];
+SC :: sc[num:pl];
+
+AgrO :: =>V< +k< agrO[num:];
+v :: =>agrO< v[num:];
+v-shift :: =>agrO< +k v[num:];
+[r:T,num:] :: =>v< t;

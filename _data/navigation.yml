@@ -8,5 +8,11 @@ main:
     url: /projects/
   - title: "CV"
     url: /cv/
-  # - title: "Miscellaneous"
-    # url: /misc/
+  - title: "Demos"
+    url: /demos/
+
+items:
+  - title: Demos
+    children:
+      - title: "<span style=\"font-weight:normal\">MG constructor</span>"
+        url: /demos/mg-constructor/

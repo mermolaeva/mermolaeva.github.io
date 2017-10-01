@@ -1,14 +1,16 @@
 ---
 layout: single
-title: "About me"
+title: "About"
 author_profile: true
 header:
   image: /assets/images/UC_spring.jpg
 ---
 
-I am a third-year PhD student in the [Department of Linguistics](http://linguistics.uchicago.edu/) at the [University of Chicago](http://www.uchicago.edu/). In 2015, I graduated from [Lomonosov Moscow State University](http://www.msu.ru/en/) with a Specialist degree (≈B.A.+M.A.) in Linguistics.
+I am a third-year PhD student in the [Department of Linguistics](http://linguistics.uchicago.edu/) at the [University of Chicago](http://www.uchicago.edu/). In 2015, I graduated from [Lomonosov Moscow State University](http://www.msu.ru/en/) with a Specialist degree (≈B.A.+M.A.) in linguistics.
 
-My primary area of interest is computational linguistics. Believing that insights from theoretical linguistics can and should inform practical applications, I also enjoy implementing my research in code. During my undergraduate career, I participated in a number of linguistic expeditions and have fieldwork experience in Uralic and Altaic languages.
+My primary area of interest is computational linguistics. Some of my current projects include [implementing agreement in Minimalist Grammars]({{ site.baseurl }}/projects#mgs-with-agreement) and [formalizing Distributed Morphology]({{ site.baseurl }}/projects#formalizing-DM). Believing that insights from theoretical linguistics can and should inform practical applications, I enjoy implementing my research in [runnable code]({{ site.baseurl }}/demos).
+
+During my undergraduate career, I participated in a number of linguistic expeditions, acquiring fieldwork experience in Uralic and Altaic languages. Since then, I became interested in developing tools that facilitate fieldwork and aid in the processing of field data -- for instance, a system for [automated extraction of agglutinative morphology]({{ site.baseurl }}/projects#automated-processing-of-agglutinative-morphology) from small samples of glossed text.
 
 ## Research interests
 * Computational linguistics

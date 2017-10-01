@@ -1,0 +1,12 @@
+/Russian PPs/
+/start/
+pp;
+
+/rules/
+:: =d +k[case:] =p< pp;
+[r:in] :: p[case:loc];
+[r:this,num:,gender:,case:] :: =n[case:]< d -k<;
+[r:box,num:sg,gender:f,case:] :: n[num:sg,gender:f]<;
+
+:: =n[case:]< =a[num:,gender:,case:] n[num:,gender:]<;
+[r:big,num:,gender:,case:] :: a<;

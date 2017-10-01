@@ -1,0 +1,9 @@
+/English agreement/
+/start/
+t;
+
+/rules/
+[r:this,num:,per:,case:] :: =n[case:]< d -k[num:sg,per:3]<;
+[r:boy,num:sg,per:3,case:] :: n[num:sg,per:3]<;
+walk :: =d v;
+[r:prs,num:,per:] :: =>v +k[case:str]< t;

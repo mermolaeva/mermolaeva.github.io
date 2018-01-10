@@ -17,15 +17,19 @@ A Javascript implementation of MGs with agreement can be found on [this page]({{
 ## <a name="formalizing-dm"></a>Formalizing Distributed Morphology
 Together with Daniel Edmiston, I am working on a mathematically rigorous formalization of the Distributed Morphology framework. We are interested in adapting DM to work over strings. Distributed Morphology is typically depicted as operating on (binary) trees, meaning its strong-generative capacity is above regular. By constraining it to operating on strings, we restrict the strong-generative capacity of the morphological module to that of regular languages, providing an immediate explanation for the *regular*ity of morphological phenomena in natural language.
 
+* **Distributed Morphology as a regular relation**  
+(with Daniel Edmiston)  
+*[1st meeting of the Society for Computation in Linguistics](https://blogs.umass.edu/scil/scil-2018/), January 4--7, 2018. Salt Lake City, UT*  
+[[extended abstract]({{ site.baseurl }}/assets/pdfs/Ermolaeva&Edmiston_DM_as_a_regular_relation_extended_abstract.pdf)] [[poster]({{ site.baseurl }}/assets/pdfs/Ermolaeva&Edmiston_DM_as_a_regular_relation_poster.pdf)]
+
 * **Distributed Morphology over strings**  
 (with Daniel Edmiston)  
 *[41st Annual Penn Linguistics Conference](http://www.ling.upenn.edu/Events/PLC/plc41/), March 23--26, 2017. Philadelphia, PA*  
 [[abstract]({{ site.baseurl }}/assets/pdfs/Ermolaeva&Edmiston_DM_over_strings_abstract.pdf)] [[poster]({{ site.baseurl }}/assets/pdfs/Ermolaeva&Edmiston_DM_over_strings_poster.pdf)]
-
-* **DM on Strings**  
+<!-- * **DM on Strings**  
 (with Daniel Edmiston)  
 *[Morphology and Syntax Workshop](https://voices.uchicago.edu/morphologyandsyntax/), February 10, 2017. Chicago, IL*  
-[[slides]({{ site.baseurl }}/assets/pdfs/Ermolaeva&Edmiston_DM_on_strings_slides.pdf)]
+[[slides]({{ site.baseurl }}/assets/pdfs/Ermolaeva&Edmiston_DM_on_strings_slides.pdf)] -->
 
 ## <a name="automated-processing-of-agglutinative-morphology"></a>Automated processing of agglutinative morphology
 The majority of existing tools that deal with complex morphology rely on either hand-written rules or large text corpora. I am interested in taking the third option: extract (agglutinative) morphology from a small sample of fully analyzed word forms. The main challenge is to reconstruct allomorphs and morphotactic sequences missing from the sample. Hand-glossed texts are a natural output of linguistic fieldwork, readily available even for under-studied languages. The goal of this project is to facilitate tasks such as morphological parsing for agglutinative languages, with a focus on good performance even with very limited language-specific resources.  

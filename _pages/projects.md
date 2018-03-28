@@ -42,7 +42,7 @@ One application of this and related work is <span style="font-variant:small-caps
 [[slides]({{ site.baseurl }}/assets/pdfs/Aksenova&Ermolaeva_Diretra_slides.pdf)] [[paper]({{ site.baseurl }}/assets/pdfs/Aksenova&Ermolaeva_Diretra.pdf)]
 
 * **Морфологический анализатор <span style="font-variant:small-caps;">Diretra</span>: больше, чем глосса
-[Morphological analyzer <span style="font-variant:small-caps;">Diretra</span>: more than a gloss]**  
+[<span style="font-variant:small-caps;">Diretra</span>, a morphological analyzer: more than a gloss]**  
 (with Alëna Aksënova)  
 *201th Meeting of the Workshop on Mathematical Methods Applied to Linguistics, October 25, 2014. Moscow, Russia*  
 [[slides-RU]({{ site.baseurl }}/assets/pdfs/Aksenova&Ermolaeva_Diretra_slides-RU.pdf)]

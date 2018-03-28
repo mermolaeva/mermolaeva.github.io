@@ -7,5 +7,5 @@ header:
   image: /assets/images/UC_spring.jpg
 ---
 
-Available [here]({{ site.baseurl }}/assets/pdfs/Ermolaeva_CV_0817.pdf).  
-Last updated: August 2017.
+Available [here]({{ site.baseurl }}/assets/pdfs/Ermolaeva_CV_0318.pdf).  
+Last updated: March 2018.

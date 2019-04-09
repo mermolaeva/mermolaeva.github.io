@@ -34,6 +34,11 @@ Together with [Daniel Edmiston](https://danedmiston.github.io/home_page/), I am 
 ## <a name="automated-processing-of-agglutinative-morphology"></a>Automated processing of agglutinative morphology
 The majority of existing tools that deal with complex morphology rely on either hand-written rules or large text corpora. I am interested in taking the third option: extract (agglutinative) morphology from a small sample of fully analyzed word forms. The main challenge is to reconstruct allomorphs and morphotactic sequences missing from the sample. Hand-glossed texts are a natural output of linguistic fieldwork, readily available even for under-studied languages. The goal of this project is to facilitate tasks such as morphological parsing for agglutinative languages, with a focus on good performance even with very limited language-specific resources.  
 
+* **Extracting morphophonology from small corpora**  
+*[15th SIGMORPHON Workshop on Computational Research in Phonetics,
+Phonology, and Morphology](https://sigmorphon.github.io/workshops/2018/), October 31, 2018. Brussels, Belgium*  
+[[poster]({{ site.baseurl }}/assets/pdfs/Ermolaeva_Extracting_morphophonology_poster.pdf)] [[paper]({{ site.baseurl }}/assets/pdfs/Ermolaeva_Extracting_morphophonology_paper.pdf)]
+
 One application of this and related work is <span style="font-variant:small-caps;">Diretra</span>, a tool for computer-aided translation which I am developing in collaboration with [Alëna Aksënova](https://www.aaksenova.com/). <span style="font-variant:small-caps;">Diretra</span> is designed for and tested on Turkic languages; its primary goal is to provide a word-for-word translation of a given text, reflecting the morphological phenomena of the source language as precisely as possible.
 
 * **<span style="font-variant:small-caps;">Diretra</span>, a customizable direct translation system: first sketches**  

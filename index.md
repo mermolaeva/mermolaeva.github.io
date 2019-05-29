@@ -10,7 +10,7 @@ I am a fourth-year Ph.D. student in the [Department of Linguistics](http://lingu
 
 My primary area of interest is computational linguistics. Some of my current projects include [implementing agreement in Minimalist Grammars]({{ site.baseurl }}/projects#mgs-with-agreement) and [formalizing Distributed Morphology]({{ site.baseurl }}/projects#formalizing-DM). Believing that insights from theoretical linguistics can and should inform practical applications, I enjoy implementing my research in [runnable code]({{ site.baseurl }}/demos).
 
-During my undergraduate career, I have participated in a number of linguistic expeditions, acquiring fieldwork experience in Uralic and Altaic languages. Since then, I became interested in developing tools that facilitate fieldwork and aid in the processing of field data -- for instance, a system for [automated extraction of agglutinative morphology]({{ site.baseurl }}/projects#automated-processing-of-agglutinative-morphology) from small samples of glossed text.
+During my undergraduate career, I participated in a number of linguistic expeditions, acquiring fieldwork experience in Uralic and Altaic languages. Since then, I became interested in developing tools that facilitate fieldwork and aid in the processing of field data -- for instance, a system for [automated extraction of agglutinative morphology]({{ site.baseurl }}/projects#automated-processing-of-agglutinative-morphology) from small samples of glossed text.
 
 ## Research interests
 * Computational linguistics

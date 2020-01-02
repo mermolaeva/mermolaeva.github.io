@@ -6,6 +6,13 @@ author_profile: true
 header:
   image: /assets/images/UC_spring.jpg
 ---
+## <a name="mg-induction"></a>Minimalist Grammar Induction
+Syntactic literature tends towards a big-picture outlook, abstracting away from algorithmic-level details such as full specifications of lexical items or syntactic features being checked by each application of a structure-building operation. At the same time, differences between competing analyses of the same phenomenon seem to belong to a relatively low level of description. Assuming a sufficiently rich formalism compatible with the Minimalist framework, which of the known syntactic proposals fall out naturally from the data, and how can we choose between competing analyses on quantitative grounds? Framing this question as a learning problem, I am developing an algorithm to induce linguistically plausible Minimalist grammars from partially annotated text/dependency structures. The project primarily focuses on learning morphological structure within complex words, extracting linguistically motivated generalizations and instantiating them as new lexical items.
+
+* **Minimalist Grammar Induction over Morphemes**
+*[3rd meeting of the Society for Computation in Linguistics](https://blogs.umass.edu/scil/call-for-papers-scil-2020/), January 2-5, 2020. New Orleans, LA*  
+[[extended abstract]({{ site.baseurl }}/assets/pdfs/Ermolaeva_MG_induction_over_morphemes_extended_abstract.pdf)] [[poster]({{ site.baseurl }}/assets/pdfs/Ermolaeva_MG_induction_over_morphemes_poster.pdf)]
+
 ## <a name="mgs-with-agreement"></a>Minimalist Grammars and agreement
 Stabler's Minimalist Grammars provide a useful tool for modeling natural language syntax by defining grammar fragments in a very precise way. As a formalization of Chomsky's Minimalist Program, they can accommodate linguistic analyses from the field of generative syntax. However, they have no machinery for encoding agreement: while morphology can be simulated by multiplying lexical items, there is no systematic way to state generalizations and implement actual proposals. My goal is to extend Minimalist Grammars with morphological features and operations on them.  
 A Javascript implementation of MGs with agreement can be found on [this page]({{ site.baseurl }}/demos/mg-constructor).

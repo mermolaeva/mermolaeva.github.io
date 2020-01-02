@@ -6,7 +6,7 @@ header:
   image: /assets/images/UC_spring.jpg
 ---
 
-I am a fourth-year Ph.D. student in the [Department of Linguistics](http://linguistics.uchicago.edu/) at the [University of Chicago](http://www.uchicago.edu/). In 2015, I graduated from [Lomonosov Moscow State University](http://www.msu.ru/en/) with a Specialist degree (≈B.A.+M.A.) in linguistics.
+I am a Ph.D. candidate in the [Department of Linguistics](http://linguistics.uchicago.edu/) at the [University of Chicago](http://www.uchicago.edu/). In 2015, I graduated from [Lomonosov Moscow State University](http://www.msu.ru/en/) with a Specialist degree (≈B.A.+M.A.) in linguistics.
 
 My primary area of interest is computational linguistics. Some of my current projects include [implementing agreement in Minimalist Grammars]({{ site.baseurl }}/projects#mgs-with-agreement) and [formalizing Distributed Morphology]({{ site.baseurl }}/projects#formalizing-DM). Believing that insights from theoretical linguistics can and should inform practical applications, I enjoy implementing my research in [runnable code]({{ site.baseurl }}/demos).
 

@@ -8,4 +8,4 @@ header:
 ---
 
 Available [here]({{ site.baseurl }}/assets/pdfs/Ermolaeva_CV.pdf).  
-Last updated: April 2019.
+Last updated: March 2020.

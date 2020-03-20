@@ -4,7 +4,7 @@ permalink: /demos/
 layout: single
 author_profile: true
 header:
-  image: /assets/images/UC_spring.jpg
+  image: /assets/images/head_img.jpg
 ---
 <!-- <style>
 .linkHeader {

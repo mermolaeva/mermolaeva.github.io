@@ -3,7 +3,7 @@ layout: single
 title: "About"
 author_profile: true
 header:
-  image: /assets/images/UC_spring.jpg
+  image: /assets/images/head_img.jpg
 ---
 
 I am a Ph.D. candidate in the [Department of Linguistics](http://linguistics.uchicago.edu/) at the [University of Chicago](http://www.uchicago.edu/). In 2015, I graduated from [Lomonosov Moscow State University](http://www.msu.ru/en/) with a Specialist degree (≈B.A.+M.A.) in linguistics.

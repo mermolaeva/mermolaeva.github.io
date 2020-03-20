@@ -4,7 +4,7 @@ permalink: /projects/
 layout: single
 author_profile: true
 header:
-  image: /assets/images/UC_spring.jpg
+  image: /assets/images/head_img.jpg
 ---
 ## <a name="mg-induction"></a>Minimalist Grammar Induction
 Syntactic literature tends towards a big-picture outlook, abstracting away from algorithmic-level details such as full specifications of lexical items or syntactic features being checked by each application of a structure-building operation. At the same time, differences between competing analyses of the same phenomenon seem to belong to a relatively low level of description. Assuming a sufficiently rich formalism compatible with the Minimalist framework, which of the known syntactic proposals fall out naturally from the data, and how can we choose between competing analyses on quantitative grounds? Framing this question as a learning problem, I am developing an algorithm to induce linguistically plausible Minimalist grammars from partially annotated text/dependency structures. The project primarily focuses on learning morphological structure within complex words, extracting linguistically motivated generalizations and instantiating them as new lexical items.

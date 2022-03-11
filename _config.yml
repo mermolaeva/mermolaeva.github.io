@@ -79,9 +79,9 @@ analytics:
 author:
   name             :
   avatar           : "/assets/images/photo.jpg"
-  bio              : "PhD candidate<br>Department&nbsp;of&nbsp;Linguistics<br>University of Chicago"
-  location         :
-  email            : "mermolaeva@uchicago.edu"
+  bio              : "<p style='margin-bottom:-5pt'><i class='fa fa-graduation-cap fa-fw'></i> Ph.D. in linguistics</p><p style='margin-bottom:-5pt'><i class='fa fa-map-marker fa-fw'></i> Moscow, Russia</p><p style='margin-bottom:-5pt'><i class='fa fa-envelope-o fa-fw'></i> <a href='mailto:mail@mermolaeva.com'>Email</a></p>"
+  location         : 
+  email            : 
   uri              :
   bitbucket        :
   codepen          :
@@ -89,7 +89,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : #"mermolaeva"
+  github           : # "mermolaeva"
   google_plus      :
   keybase          :
   instagram        :

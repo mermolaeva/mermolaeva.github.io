@@ -2,17 +2,31 @@
 main:
   - title: "About"
     url: /
-  # - title: "Publications"
-    # url: /publications/
   - title: "Projects"
     url: /projects/
   - title: "CV"
     url: /cv/
   - title: "Demos"
     url: /demos/
+  # - title: "Teaching"
+  #   url: /teaching/
 
-items:
-  - title: Demos
+# items:
+#   - title: Demos
+#     children:
+#       - title: "<span style=\"font-weight:normal\">MG constructor</span>"
+#         url: /demos/mg-constructor/
+
+projects:
+  - title:
     children:
-      - title: "<span style=\"font-weight:normal\">MG constructor</span>"
-        url: /demos/mg-constructor/
+    - title: "Minimalist grammar optimization<hr>"
+      url: /projects#minimalist-grammar-optimization
+    - title: "Minimalist grammars and agreement<hr>"
+      url: /projects#minimalist-grammars-and-agreement
+    - title: "Formalizing Distributed Morphology<hr>"
+      url: /projects#formalizing-distributed-morphology
+    - title: "Automated processing of agglutinative morphology<hr>"
+      url: /projects#automated-processing-of-agglutinative-morphology
+    - title: "Turkic converbs<hr>"
+      url: /projects#turkic-converbs

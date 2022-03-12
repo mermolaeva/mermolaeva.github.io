@@ -8,7 +8,7 @@ header:
 
 <!-- I am a Ph.D. candidate in the [Department of Linguistics](http://linguistics.uchicago.edu/) at the [University of Chicago](http://www.uchicago.edu/). In 2015, I graduated from [Lomonosov Moscow State University](http://www.msu.ru/en/) with a Specialist degree (≈B.A.+M.A.) in linguistics. -->
 
-At the present time, I hold the position of Chief Development Engineer at [Sberbank's SberDevices](https://sberdevices.ru/), as well as that of Junior Researcher at [Lomonosov Moscow State University](http://www.msu.ru/en/).
+At the present time, I hold the position of Chief Development Engineer at [Sber's SberDevices](https://sberdevices.ru/), as well as that of Junior Researcher at [Lomonosov Moscow State University](http://www.msu.ru/en/).
 
 I received my Ph.D. in 2021 from the [Department of Linguistics](http://linguistics.uchicago.edu/) at the [University of Chicago](http://www.uchicago.edu/). My dissertation, titled _Learning Syntax via Decomposition_, can be found [here](https://knowledge.uchicago.edu/record/3015). In 2015, I graduated from Lomonosov Moscow State University with a Specialist degree (≈B.A.+M.A.) in linguistics. 
 

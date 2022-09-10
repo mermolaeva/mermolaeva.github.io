@@ -4,12 +4,12 @@ main:
     url: /
   - title: "Projects"
     url: /projects/
+  - title: "Teaching"
+    url: /teaching/
   - title: "CV"
     url: /cv/
   - title: "Demos"
     url: /demos/
-  # - title: "Teaching"
-  #   url: /teaching/
 
 # items:
 #   - title: Demos
@@ -30,3 +30,13 @@ projects:
       url: /projects#automated-processing-of-agglutinative-morphology
     - title: "Turkic converbs<hr>"
       url: /projects#turkic-converbs
+
+teaching:
+  - title:
+    children:
+    - title: "Формальные грамматики и синтаксис<hr>"
+      url: /teaching#mmvli-ii
+    - title: "Формальные грамматики, фонология и морфология<hr>"
+      url: /teaching#mmvli-i
+    - title: "Formal foundations of linguistics<hr>"
+      url: /teaching#formal-foundations-of-linguistics

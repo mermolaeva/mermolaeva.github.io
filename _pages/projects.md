@@ -11,7 +11,7 @@ sidebar:
 --- 
 
 
-## <a name="minimalist-grammar-optimization"></a>Minimalist grammar optimization  
+## <span id="minimalist-grammar-optimization">Minimalist grammar optimization</span>
 Syntactic literature tends towards a big-picture outlook, abstracting away from algorithmic-level details such as full specifications of lexical items or syntactic features being checked by each application of a structure-building operation. At the same time, differences between competing analyses of the same phenomenon seem to belong to a relatively low level of description. Assuming a sufficiently rich formalism compatible with the Minimalist framework, 
 <!-- which of the known syntactic proposals fall out naturally from the data, and  -->
 how can we choose between competing analyses on quantitative grounds? Framing this question as a learning problem, I have developed an algorithm capable of transforming a naive minimalist grammar over unsegmented words into a linguistically motivated one over morphemes. The project primarily focuses on learning morphological structure within complex words, extracting linguistically motivated generalizations and instantiating them as new lexical items.  
@@ -28,7 +28,7 @@ how can we choose between competing analyses on quantitative grounds? Framing th
 *[3rd meeting of the Society for Computation in Linguistics](https://blogs.umass.edu/scil/call-for-papers-scil-2020/), January 2-5, 2020. New Orleans, LA*    
 [[extended abstract]({{ site.baseurl }}/assets/pdfs/Ermolaeva_MG_induction_over_morphemes_extended_abstract.pdf)] [[poster]({{ site.baseurl }}/assets/pdfs/Ermolaeva_MG_induction_over_morphemes_poster.pdf)]  
   
-## <a name="minimalist-grammars-and-agreement"></a>Minimalist grammars and agreement  
+## <span id="minimalist-grammars-and-agreement">Minimalist grammars and agreement</span>
 Stabler's minimalist grammars provide a useful tool for modeling natural language syntax by defining grammar fragments in a very precise way. As a formalization of Chomsky's Minimalist Program, they can accommodate linguistic analyses from the field of generative syntax. However, they have no machinery for encoding agreement: while morphology can be simulated by multiplying lexical items, there is no systematic way to state generalizations and implement actual proposals. My goal is to extend minimalist grammars with morphological features and operations on them.    
 A Javascript implementation of MGs with agreement can be found on [this page]({{ site.baseurl }}/demos/mg-constructor).  
   
@@ -36,7 +36,7 @@ A Javascript implementation of MGs with agreement can be found on [this page]({{
 *[22nd Conference on Formal Grammar](http://fg.phil.hhu.de/2017/), July 22--23, 2017. Toulouse, France*    
 [[slides]({{ site.baseurl }}/assets/pdfs/Ermolaeva_agreement_in_MGs_slides.pdf)] [[paper]({{ site.baseurl }}/assets/pdfs/Ermolaeva_agreement_in_MGs.pdf)] [[demo]({{ site.baseurl }}/demos/mg-constructor)]  
   
-## <a name="formalizing-distributed-morphology"></a>Formalizing Distributed Morphology  
+## <span id="formalizing-distributed-morphology">Formalizing Distributed Morphology</span>
 Together with [Daniel Edmiston](https://danedmiston.github.io/home_page/), I am working on a mathematically rigorous formalization of the Distributed Morphology framework. We are interested in adapting DM to work over strings. Distributed Morphology is typically depicted as operating on (binary) trees, meaning its strong-generative capacity is above regular. By constraining it to operating on strings, we restrict the strong-generative capacity of the morphological module to that of regular languages, providing an immediate explanation for the *regular*ity of morphological phenomena in natural language.  
   
 * **Distributed Morphology as a regular relation**    
@@ -53,7 +53,7 @@ Together with [Daniel Edmiston](https://danedmiston.github.io/home_page/), I am 
 *[Morphology and Syntax Workshop](https://voices.uchicago.edu/morphologyandsyntax/), February 10, 2017. Chicago, IL*    
 [[slides]({{ site.baseurl }}/assets/pdfs/Ermolaeva&Edmiston_DM_on_strings_slides.pdf)] -->  
   
-## <a name="automated-processing-of-agglutinative-morphology"></a>Automated processing of agglutinative morphology  
+## <span id="automated-processing-of-agglutinative-morphology">Automated processing of agglutinative morphology</span>
 The majority of existing tools that deal with complex morphology rely on either hand-written rules or large text corpora. I am interested in taking the third option: extract (agglutinative) morphology from a small sample of fully analyzed word forms. The main challenge is to reconstruct allomorphs and morphotactic sequences missing from the sample. Hand-glossed texts are a natural output of linguistic fieldwork, readily available even for under-studied languages. The goal of this project is to facilitate tasks such as morphological parsing for agglutinative languages, with a focus on good performance even with very limited language-specific resources.    
   
 * **Extracting morphophonology from small corpora**    
@@ -78,7 +78,7 @@ One application of this and related work is <span style="font-variant:small-caps
 *[Italian Conference on Computational Linguistics](http://www.fileli.unipi.it/projects/clic/en), December 9--10, 2014. Pisa, Italy*    
 [[poster]({{ site.baseurl }}/assets/pdfs/Ermolaeva_parser_poster.pdf)] [[paper]({{ site.baseurl }}/assets/pdfs/Ermolaeva_parser.pdf)]  
   
-## Turkic converbs  
+## <span id="turkic-converbs">Turkic converbs</span>
 In Turkic languages, converbs --- a type of non-finite verb form --- are a regular means of constructing complex predications. The *-p* converb, present in the majority of Turkic languages, exhibits a number of interesting syntactic properties. In particular, *-p* converbs can correspond to both adjunct and coordinate syntactic structures.    
 <!-- This direction of research is largely based on fieldwork data from a number of OTiPL linguistic expeditions. -->  
 

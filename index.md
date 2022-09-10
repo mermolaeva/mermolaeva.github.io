@@ -8,7 +8,7 @@ header:
 
 <!-- I am a Ph.D. candidate in the [Department of Linguistics](http://linguistics.uchicago.edu/) at the [University of Chicago](http://www.uchicago.edu/). In 2015, I graduated from [Lomonosov Moscow State University](http://www.msu.ru/en/) with a Specialist degree (≈B.A.+M.A.) in linguistics. -->
 
-At the present time, I hold the position of Junior Researcher at [Lomonosov Moscow State University](http://www.msu.ru/en/).
+<!-- At the present time, I hold the position of Junior Researcher at [Lomonosov Moscow State University](http://www.msu.ru/en/). -->
 
 I received my Ph.D. in 2021 from the [Department of Linguistics](http://linguistics.uchicago.edu/) at the [University of Chicago](http://www.uchicago.edu/). My dissertation, titled _Learning Syntax via Decomposition_, can be found [here](https://knowledge.uchicago.edu/record/3015). In 2015, I graduated from Lomonosov Moscow State University with a Specialist degree (≈B.A.+M.A.) in linguistics. 
 
@@ -28,12 +28,10 @@ During my undergraduate career, I participated in a number of linguistic expedit
 
 <i class="fa fa-university fa-fw"></i> [Lomonosov Moscow State University](http://www.msu.ru/en/) \| [Department of Theoretical and Applied Linguistics](http://tipl.philol.msu.ru/)
 
-
-<!-- <i class="fa fa-briefcase fa-fw"></i> [SberDevices](https://www.sberbank.com/ru/eco/sberdevices) -->
-
 <i class="fa fa-github fa-fw"></i> [GitHub](https://github.com/mermolaeva)
 
 <!-- <i class="fa fa-envelope-o fa-fw"></i>  -->
+<i class="ai ai-google-scholar-square ai-fw"></i>
 [Google Scholar](https://scholar.google.com/citations?user=LJuhY2kAAAAJ)
 
 <!-- <i class="fa fa-university fa-fw"></i> University of Chicago | Department of Linguistics  

@@ -34,9 +34,9 @@ projects:
 teaching:
   - title:
     children:
+    - title: "Формальные грамматики и фонология<hr>"
+      url: /teaching#mmvli-i
     - title: "Формальные грамматики и синтаксис<hr>"
       url: /teaching#mmvli-ii
-    - title: "Формальные грамматики, фонология и морфология<hr>"
-      url: /teaching#mmvli-i
     - title: "Formal foundations of linguistics<hr>"
       url: /teaching#formal-foundations-of-linguistics

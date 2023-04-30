@@ -34,6 +34,8 @@ projects:
 teaching:
   - title:
     children:
+    - title: "Ридинг-группа ОТиПла<hr>"
+      url: /teaching#reading-group
     - title: "Формальные грамматики и фонология<hr>"
       url: /teaching#mmvli-i
     - title: "Формальные грамматики и синтаксис<hr>"

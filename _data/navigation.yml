@@ -34,7 +34,9 @@ projects:
 teaching:
   - title:
     children:
-    - title: "Ридинг-группа ОТиПла<hr>"
+    - title: "Математика синтаксиса<hr>"
+      url: /teaching#mathematics-of-syntax
+    - title: "Ридинг-группа ОТиПЛа<hr>"
       url: /teaching#reading-group
     - title: "Формальные грамматики и фонология<hr>"
       url: /teaching#mmvli-i

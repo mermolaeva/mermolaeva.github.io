@@ -11,12 +11,15 @@ sidebar:
 --- 
 
 ## <span id="mathematics-of-syntax">Математика синтаксиса: формализация закономерностей в языковых данных</span>
+
 #### Аннотация
 Семинар для школьников "Математика синтаксиса" посвящен формализации в лингвистике. Мы поговорим о том, как можно описывать явления естественного языка в виде математических объектов и зачем это нужно; какие бывают синтаксические зависимости и почему некоторые из них намного сложнее других; как устроены синтаксические обобщения и как автоматизировать процесс их поиска. На примере английского языка слушатели научатся конструировать точные языковые описания -- фрагменты грамматик.  
 [[день 1]({{ site.baseurl }}/assets/pdfs/Mathematics_of_syntax_1.pdf)] [[день 2]({{ site.baseurl }}/assets/pdfs/Mathematics_of_syntax_2.pdf)] [[день 3]({{ site.baseurl }}/assets/pdfs/Mathematics_of_syntax_3.pdf)] [[день 4]({{ site.baseurl }}/assets/pdfs/Mathematics_of_syntax_4.pdf)] 
 
 #### Расписание
 
+<details>
+<summary>Архив</summary>
 <table>
 <tr><td colspan="3"><b>XXIII Летняя Лингвистическая Школа</b></td></tr>
 <tr>
@@ -25,14 +28,24 @@ sidebar:
 <td><s>Зал "Переславль"</s> Зимний шатёр</td>
 </tr>
 </table>  
-
+</details> 
 
 ## <span id="reading-group">Ридинг-группа ОТиПЛа</span>
+
 #### Аннотация 
 Ридинг-группа — это неформальные встречи для обсуждения лингвистических статей, языковых данных и работ "в процессе" по выбору участников. Круг возможных тем не ограничен, но по умолчанию предпочтение отдается вычислительной/математической лингвистике и формальным грамматикам.  
 [[объявление]({{ site.baseurl }}/assets/pdfs/Reading_group_announcement.pdf)]
 
 #### Расписание
+
+<table>
+<tr><td colspan="3"><b>МГУ имени М. В. Ломоносова | Отделение теоретической и прикладной лингвистики</b></td></tr>
+<tr>
+<td>Осень 2023</td>
+<td>Вторник, 18:00–19:30</td>
+<td>1-й учебный корпус, ауд. 953</td>
+</tr>
+</table>
 
 <details>
 <summary>Архив</summary>
@@ -47,6 +60,7 @@ sidebar:
 </details> 
 
 ## <span id="mmvli-i">Формальные грамматики и фонология [ММвЛИ I] </span>
+
 #### Аннотация 
 Центральное место в курсе "Математические методы в лингвистических исследованиях II" ("Формальные грамматики и фонология") занимает (расширенная) иерархия формальных языков и формальных грамматик. Мы рассмотрим ее через призму лингвистики, уделяя особое внимание классам, представляющим особый интерес для описания естественного языка. В этом семестре мы изучим на практике ряд грамматических формализмов, обычно используемых для описания явлений из области фонологии. Обсуждаемые темы включают моделирование фонологических ограничений и каскадов упорядоченных правил с помощью конечных автоматов и преобразователей, взвешенные преобразователи для формализации теории оптимальности, а также субрегулярные языки и грамматики.  
 [[слайды]({{ site.baseurl }}/assets/pdfs/MMvLI_February_8_2022.pdf)]
@@ -85,6 +99,16 @@ sidebar:
 [[слайды]({{ site.baseurl }}/assets/pdfs/MMvLI_September_6_2022.pdf)]
 
 #### Расписание
+
+<table>
+<tr><td colspan="3"><b>МГУ имени М. В. Ломоносова | Отделение теоретической и прикладной лингвистики</b></td></tr>
+<tr>
+<td>Осень 2023</td>
+<td>Понедельник, 13:00–14:30</td>
+<td>1-й учебный корпус, ауд. 953</td>
+</tr>
+</table>
+
 <details>
 <summary>Архив</summary>
 <table>
@@ -102,6 +126,7 @@ sidebar:
 </details>   
 
 ## <span id="formal-foundations-of-linguistics" title="">Formal foundations of linguistics [LING 21020]</span>
+
 #### Course description
 This course aims to serve as a data-driven introduction to mathematical approaches to language. It explores the (extended) hierarchy of formal languages from a linguist's point of view, with an emphasis on classes that are of special interest for describing natural language phenomena. We will study, in a hands-on way, a number of grammar formalisms commonly used to characterize patterns in phonology, morphology, and syntax. The only prerequisite is familiarity with the basic notions of linguistics; no programming experience or extensive mathematical background is required.  
 [[syllabus]({{ site.baseurl }}/assets/pdfs/LING_21020_syllabus_v1_1.pdf)] [[slides]({{ site.baseurl }}/assets/pdfs/LING_21020_wk1_Monday.pdf)]

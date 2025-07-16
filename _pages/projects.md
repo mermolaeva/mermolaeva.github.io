@@ -10,11 +10,25 @@ sidebar:
   nav: "projects"
 --- 
 
+## <span id="cross-formalism-mdl">Cross-formalism MDL</span>
+This project is developed together with [John Goldsmith](https://people.cs.uchicago.edu/~jagoldsm/) and builds upon ideas outlined in ([Goldsmith 2015](https://people.cs.uchicago.edu/~jagoldsm/papers/empiricism.pdf)). We propose a three-term version of minimum description length (MDL) that incorporates the cost of encoding the (formalized) linguistic theory itself, in addition to individual grammars and compressed descriptions of corpora. Using phonological and morphological patterns as a basic example, we demonstrate how alternative linguistic theories could be evaluated quantitatively with the help of this metric.
+
+* **Cross-formalism MDL**  
+*LingBuzz, 2023*  
+[[preprint](https://ling.auf.net/lingbuzz/007678)] [[code](https://github.com/mermolaeva/cross-formalism-mdl)]  
 
 ## <span id="minimalist-grammar-optimization">Minimalist grammar optimization</span>
 Syntactic literature tends towards a big-picture outlook, abstracting away from algorithmic-level details such as full specifications of lexical items or syntactic features being checked by each application of a structure-building operation. At the same time, differences between competing analyses of the same phenomenon seem to belong to a relatively low level of description. Assuming a sufficiently rich formalism compatible with the Minimalist framework, 
 <!-- which of the known syntactic proposals fall out naturally from the data, and  -->
 how can we choose between competing analyses on quantitative grounds? Framing this question as a learning problem, I have developed an algorithm capable of transforming a naive minimalist grammar over unsegmented words into a linguistically motivated one over morphemes. The project primarily focuses on learning morphological structure within complex words, extracting linguistically motivated generalizations and instantiating them as new lexical items.  
+
+* **Evaluating syntactic proposals using minimalist grammars and minimum description length**  
+*Journal of Language Modelling, Vol. 11 No. 1, 2023*  
+[[paper](https://jlm.ipipan.waw.pl/index.php/JLM/article/view/334)]  
+
+* **Towards a discovery procedure for minimalist grammars**  
+*LingBuzz, 2022*  
+[[preprint](https://ling.auf.net/lingbuzz/006897)]  
   
 * **Learning syntax via decomposition**  
 *University of Chicago, 2021. Chicago, IL*  
@@ -31,13 +45,24 @@ how can we choose between competing analyses on quantitative grounds? Framing th
 ## <span id="minimalist-grammars-and-agreement">Minimalist grammars and agreement</span>
 Stabler's minimalist grammars provide a useful tool for modeling natural language syntax by defining grammar fragments in a very precise way. As a formalization of Chomsky's Minimalist Program, they can accommodate linguistic analyses from the field of generative syntax. However, they have no machinery for encoding agreement: while morphology can be simulated by multiplying lexical items, there is no systematic way to state generalizations and implement actual proposals. My goal is to extend minimalist grammars with morphological features and operations on them.    
 A Javascript implementation of MGs with agreement can be found on [this page]({{ site.baseurl }}/demos/mg-constructor).  
-  
+A more recent (and less cumbersome) iteration of this approach, developed together with [Gregory Kobele](https://home.uni-leipzig.de/gkobele/), is Agreement over Channels. Under this perspective, agreement transfers purely morphological information from head to head along channels established via syntactic feature checking.
+
+* **Agreeing minimalist grammars**  
+(with Gregory Kobele)  
+*LingBuzz, 2023*  
+[[preprint](https://ling.auf.net/lingbuzz/007676)] 
+
+* **Agree as information transmission over dependencies**  
+(with Gregory Kobele)  
+*Syntax, Vol. 25 Issue 4, 2022*  
+[[paper](https://onlinelibrary.wiley.com/doi/full/10.1111/synt.12240)]  
+
 * **Morphological agreement in minimalist grammars**    
 *[22nd Conference on Formal Grammar](http://fg.phil.hhu.de/2017/), July 22--23, 2017. Toulouse, France*    
 [[slides]({{ site.baseurl }}/assets/pdfs/Ermolaeva_agreement_in_MGs_slides.pdf)] [[paper]({{ site.baseurl }}/assets/pdfs/Ermolaeva_agreement_in_MGs.pdf)] [[demo]({{ site.baseurl }}/demos/mg-constructor)]  
   
 ## <span id="formalizing-distributed-morphology">Formalizing Distributed Morphology</span>
-Together with [Daniel Edmiston](https://danedmiston.github.io/home_page/), I am working on a mathematically rigorous formalization of the Distributed Morphology framework. We are interested in adapting DM to work over strings. Distributed Morphology is typically depicted as operating on (binary) trees, meaning its strong-generative capacity is above regular. By constraining it to operating on strings, we restrict the strong-generative capacity of the morphological module to that of regular languages, providing an immediate explanation for the *regular*ity of morphological phenomena in natural language.  
+Together with [Daniel Edmiston](https://danedmiston.github.io/home_page/), I worked on a mathematically rigorous formalization of the Distributed Morphology framework. We were interested in adapting DM to work over strings. Distributed Morphology is typically depicted as operating on (binary) trees, meaning its strong-generative capacity is above regular. By constraining it to operating on strings, we restricted the strong-generative capacity of the morphological module to that of regular languages, providing an immediate explanation for the *regular*ity of morphological phenomena in natural language.  
   
 * **Distributed Morphology as a regular relation**    
 (with Daniel Edmiston)    
@@ -61,18 +86,18 @@ The majority of existing tools that deal with complex morphology rely on either 
 Phonology, and Morphology](https://sigmorphon.github.io/workshops/2018/), October 31, 2018. Brussels, Belgium*    
 [[poster]({{ site.baseurl }}/assets/pdfs/Ermolaeva_Extracting_morphophonology_poster.pdf)] [[paper]({{ site.baseurl }}/assets/pdfs/Ermolaeva_Extracting_morphophonology_paper.pdf)]  
   
-One application of this and related work is <span style="font-variant:small-caps;">Diretra</span>, a tool for computer-aided translation which I am developing in collaboration with [Alëna Aksënova](https://www.aaksenova.com/). <span style="font-variant:small-caps;">Diretra</span> is designed for and tested on Turkic languages; its primary goal is to provide a word-for-word translation of a given text, reflecting the morphological phenomena of the source language as precisely as possible.  
+One application of this and related work is <span style="font-variant:small-caps;">Diretra</span>, a tool for computer-aided translation which I worked on in collaboration with [Alëna Aksënova](https://www.aaksenova.com/). <span style="font-variant:small-caps;">Diretra</span> was designed for and tested on Turkic languages; its primary goal was to provide a word-for-word translation of a given text, reflecting the morphological phenomena of the source language as precisely as possible.  
   
 * **<span style="font-variant:small-caps;">Diretra</span>, a customizable direct translation system: first sketches**    
 (with Alëna Aksënova)    
 *[2nd International TRANSLATA Conference](http://aux.uibk.ac.at/c61349/en), October 30--November 1, 2014. Innsbruck, Austria*    
 [[slides]({{ site.baseurl }}/assets/pdfs/Aksenova&Ermolaeva_Diretra_slides.pdf)] [[paper]({{ site.baseurl }}/assets/pdfs/Aksenova&Ermolaeva_Diretra.pdf)]  
   
-* **Морфологический анализатор <span style="font-variant:small-caps;">Diretra</span>: больше, чем глосса  
+<!-- * **Морфологический анализатор <span style="font-variant:small-caps;">Diretra</span>: больше, чем глосса  
 [<span style="font-variant:small-caps;">Diretra</span>, a morphological analyzer: more than a gloss]**    
 (with Alëna Aksënova)    
 *201th Meeting of the Workshop on Mathematical Methods Applied to Linguistics, October 25, 2014. Moscow, Russia*    
-[[slides in Russian]({{ site.baseurl }}/assets/pdfs/Aksenova&Ermolaeva_Diretra_slides-RU.pdf)]  
+[[slides in Russian]({{ site.baseurl }}/assets/pdfs/Aksenova&Ermolaeva_Diretra_slides-RU.pdf)]   -->
   
 * **An adaptable morphological parser for agglutinative languages**    
 *[Italian Conference on Computational Linguistics](http://www.fileli.unipi.it/projects/clic/en), December 9--10, 2014. Pisa, Italy*    

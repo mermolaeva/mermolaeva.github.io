@@ -20,6 +20,8 @@ main:
 projects:
   - title:
     children:
+    - title: "Cross-formalism MDL<hr>"
+      url: /projects#cross-formalism-mdl
     - title: "Minimalist grammar optimization<hr>"
       url: /projects#minimalist-grammar-optimization
     - title: "Minimalist grammars and agreement<hr>"

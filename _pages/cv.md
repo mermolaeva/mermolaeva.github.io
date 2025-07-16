@@ -8,7 +8,7 @@ header:
 ---
 
 <!-- Available [here]({{ site.baseurl }}/assets/pdfs/Ermolaeva_CV.pdf).   -->
-Available here: [in English]({{ site.baseurl }}/assets/pdfs/CV_ME_0523_en.pdf), [in Russian]({{ site.baseurl }}/assets/pdfs/CV_ME_0523_ru.pdf).
+Available here: [in English]({{ site.baseurl }}/assets/pdfs/CV_ME_0725_en.pdf), [in Russian]({{ site.baseurl }}/assets/pdfs/CV_ME_0725_ru.pdf).
 
 
-Last updated: May 2023.
+Last updated: July 2025.

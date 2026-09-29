@@ -36,15 +36,15 @@ projects:
 teaching:
   - title:
     children:
-    - title: "Математика синтаксиса<hr>"
+    - title: "Математика синтаксиса<br> [Mathematics of syntax]<hr>"
       url: /teaching#mathematics-of-syntax
-    - title: "Ридинг-группа ОТиПЛа<hr>"
+    - title: "Ридинг-группа ОТиПЛа<br> [OTiPL reading group]<hr>"
       url: /teaching#reading-group
-    - title: "Математические модели в морфологии<hr>"
+    - title: "Математические модели в морфологии<br> [Mathematical models in morphology]<hr>"
       url: /teaching#mmvm
-    - title: "Формальные грамматики и фонология<hr>"
+    - title: "Формальные грамматики и фонология<br> [Formal grammars and phonology]<hr>"
       url: /teaching#mmvli-i
-    - title: "Формальные грамматики и синтаксис<hr>"
+    - title: "Формальные грамматики и синтаксис<br> [Formal grammars and syntax]<hr>"
       url: /teaching#mmvli-ii
     - title: "Formal foundations of linguistics<hr>"
       url: /teaching#formal-foundations-of-linguistics

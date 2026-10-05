@@ -3,7 +3,6 @@ title: "Projects"
 permalink: /projects/
 layout: single
 <!-- author_profile: true -->
-toc: true
 header:  
   image: /assets/images/head_img.jpg  
 sidebar:
@@ -73,10 +72,6 @@ Together with [Daniel Edmiston](https://danedmiston.github.io/home_page/), I wor
 (with Daniel Edmiston)    
 *[41st Annual Penn Linguistics Conference](http://www.ling.upenn.edu/Events/PLC/plc41/), March 23--26, 2017. Philadelphia, PA*    
 [[abstract]({{ site.baseurl }}/assets/pdfs/Ermolaeva&Edmiston_DM_over_strings_abstract.pdf)] [[poster]({{ site.baseurl }}/assets/pdfs/Ermolaeva&Edmiston_DM_over_strings_poster.pdf)]  
-<!-- * **DM on Strings**    
-(with Daniel Edmiston)    
-*[Morphology and Syntax Workshop](https://voices.uchicago.edu/morphologyandsyntax/), February 10, 2017. Chicago, IL*    
-[[slides]({{ site.baseurl }}/assets/pdfs/Ermolaeva&Edmiston_DM_on_strings_slides.pdf)] -->  
   
 ## <span id="automated-processing-of-agglutinative-morphology">Automated processing of agglutinative morphology</span>
 The majority of existing tools that deal with complex morphology rely on either hand-written rules or large text corpora. I am interested in taking the third option: extract (agglutinative) morphology from a small sample of fully analyzed word forms. The main challenge is to reconstruct allomorphs and morphotactic sequences missing from the sample. Hand-glossed texts are a natural output of linguistic fieldwork, readily available even for under-studied languages. The goal of this project is to facilitate tasks such as morphological parsing for agglutinative languages, with a focus on good performance even with very limited language-specific resources.    
@@ -93,19 +88,12 @@ One application of this and related work is <span style="font-variant:small-caps
 *[2nd International TRANSLATA Conference](http://aux.uibk.ac.at/c61349/en), October 30--November 1, 2014. Innsbruck, Austria*    
 [[slides]({{ site.baseurl }}/assets/pdfs/Aksenova&Ermolaeva_Diretra_slides.pdf)] [[paper]({{ site.baseurl }}/assets/pdfs/Aksenova&Ermolaeva_Diretra.pdf)]  
   
-<!-- * **Морфологический анализатор <span style="font-variant:small-caps;">Diretra</span>: больше, чем глосса  
-[<span style="font-variant:small-caps;">Diretra</span>, a morphological analyzer: more than a gloss]**    
-(with Alëna Aksënova)    
-*201th Meeting of the Workshop on Mathematical Methods Applied to Linguistics, October 25, 2014. Moscow, Russia*    
-[[slides in Russian]({{ site.baseurl }}/assets/pdfs/Aksenova&Ermolaeva_Diretra_slides-RU.pdf)]   -->
-  
 * **An adaptable morphological parser for agglutinative languages**    
 *[Italian Conference on Computational Linguistics](http://www.fileli.unipi.it/projects/clic/en), December 9--10, 2014. Pisa, Italy*    
 [[poster]({{ site.baseurl }}/assets/pdfs/Ermolaeva_parser_poster.pdf)] [[paper]({{ site.baseurl }}/assets/pdfs/Ermolaeva_parser.pdf)]  
   
 ## <span id="turkic-converbs">Turkic converbs</span>
 In Turkic languages, converbs --- a type of non-finite verb form --- are a regular means of constructing complex predications. The *-p* converb, present in the majority of Turkic languages, exhibits a number of interesting syntactic properties. In particular, *-p* converbs can correspond to both adjunct and coordinate syntactic structures.    
-<!-- This direction of research is largely based on fieldwork data from a number of OTiPL linguistic expeditions. -->  
 
 * **On the dual nature of Turkic converbs [О двойственной природе тюркских конвербов]**    
 (with [Pavel Graschenkov](https://www.pavelgra.com/))    

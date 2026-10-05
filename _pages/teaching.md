@@ -3,7 +3,6 @@ title: "Teaching"
 permalink: /teaching/
 layout: single
 <!-- author_profile: true -->
-toc: true
 header:  
   image: /assets/images/head_img.jpg  
 sidebar:

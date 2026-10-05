@@ -21,30 +21,30 @@ projects:
   - title:
     children:
     - title: "Cross-formalism MDL<hr>"
-      url: /projects#cross-formalism-mdl
+      url: /projects/#cross-formalism-mdl
     - title: "Minimalist grammar optimization<hr>"
-      url: /projects#minimalist-grammar-optimization
+      url: /projects/#minimalist-grammar-optimization
     - title: "Minimalist grammars and agreement<hr>"
-      url: /projects#minimalist-grammars-and-agreement
+      url: /projects/#minimalist-grammars-and-agreement
     - title: "Formalizing Distributed Morphology<hr>"
-      url: /projects#formalizing-distributed-morphology
+      url: /projects/#formalizing-distributed-morphology
     - title: "Automated processing of agglutinative morphology<hr>"
-      url: /projects#automated-processing-of-agglutinative-morphology
+      url: /projects/#automated-processing-of-agglutinative-morphology
     - title: "Turkic converbs<hr>"
-      url: /projects#turkic-converbs
+      url: /projects/#turkic-converbs
 
 teaching:
   - title:
     children:
     - title: "Математика синтаксиса<br> [Mathematics of syntax]<hr>"
-      url: /teaching#mathematics-of-syntax
+      url: /teaching/#mathematics-of-syntax
     - title: "Ридинг-группа ОТиПЛа<br> [OTiPL reading group]<hr>"
-      url: /teaching#reading-group
+      url: /teaching/#reading-group
     - title: "Математические модели в морфологии<br> [Mathematical models in morphology]<hr>"
-      url: /teaching#mmvm
+      url: /teaching/#mmvm
     - title: "Формальные грамматики и фонология<br> [Formal grammars and phonology]<hr>"
-      url: /teaching#mmvli-i
+      url: /teaching/#mmvli-i
     - title: "Формальные грамматики и синтаксис<br> [Formal grammars and syntax]<hr>"
-      url: /teaching#mmvli-ii
+      url: /teaching/#mmvli-ii
     - title: "Formal foundations of linguistics<hr>"
-      url: /teaching#formal-foundations-of-linguistics
+      url: /teaching/#formal-foundations-of-linguistics

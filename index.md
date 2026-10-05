@@ -23,12 +23,12 @@ I also built a small LLM-driven text game inspired by coffee-break roguelikes an
 * Turkic languages -->
 
 ## Links and contact information
-<i class="fa fa-envelope-o fa-fw"></i> [mail@mermolaeva.com](mailto:mail@mermolaeva.com)
+<i class="fas fa-square-envelope fa-fw"></i> [mail@mermolaeva.com](mailto:mail@mermolaeva.com)
 
 
 <!-- <i class="fa fa-university fa-fw"></i> [Lomonosov Moscow State University](http://www.msu.ru/en/) \| [Department of Theoretical and Applied Linguistics](http://tipl.philol.msu.ru/) -->
 
-<i class="fa fa-github fa-fw"></i> [GitHub](https://github.com/mermolaeva)
+<i class="fab fa-github fa-fw"></i> [GitHub](https://github.com/mermolaeva)
 
 <!-- <i class="fa fa-envelope-o fa-fw"></i>  -->
 <i class="ai ai-google-scholar-square ai-fw"></i>

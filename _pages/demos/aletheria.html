@@ -1,0 +1,51 @@
+---
+permalink: /demos/aletheria/
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://api.mermolaeva.com; connect-src https://api.mermolaeva.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'">
+  <title>Aletheria — AI text RPG demo</title>
+  <link rel="stylesheet" href="{{ '/assets/demos/aletheria-web/demo.css' | relative_url }}">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="game-header">
+      <div>
+        <!-- <p class="eyebrow">GPTTRPG</p> -->
+        <h1 id="game-title">Aletheria</h1>
+      </div>
+      <p id="connection-status" class="status" role="status" aria-live="polite"></p>
+    </header>
+
+    <aside class="browser-note" id="browser-note"></aside>
+    <div class="play-area">
+      <section class="transcript" id="transcript" aria-live="polite" aria-busy="true"></section>
+
+      <aside class="submenu-panel" id="submenu-panel" aria-live="polite" hidden>
+        <div class="submenu-messages" id="submenu-messages"></div>
+      </aside>
+    </div>
+
+    <section class="options" id="options" aria-label="Available choices"></section>
+
+    <form class="action-form" id="action-form" hidden>
+      <label for="action-input" id="action-label">Your action</label>
+      <div class="action-row">
+        <input id="action-input" name="action" type="text" autocomplete="off">
+        <button id="send-action" type="submit">Send</button>
+      </div>
+    </form>
+
+    <section class="options" id="navigation-options"></section>
+
+    <section class="options submenu-options" id="submenu-options"></section>
+  </main>
+
+  <script src="{{ '/assets/demos/aletheria-web/config.js' | relative_url }}"></script>
+  <script src="{{ '/assets/demos/aletheria-web/demo.js' | relative_url }}"></script>
+</body>
+</html>

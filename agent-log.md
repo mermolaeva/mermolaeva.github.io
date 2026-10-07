@@ -205,3 +205,61 @@ Human comments must go in clearly marked sections.
 - None known.
 
 ---
+
+## 2026-10-07 12:49 BST — Demo Source Organization
+
+**Summary**
+- Moved the MG Constructor page into `_pages/demos/` while preserving its public `/demos/mg-constructor/` URL.
+- Moved its sample grammars into `assets/demos/mg-constructor/grammars/` and updated all affected links.
+- Normalized links to the demo to use its canonical trailing-slash URL.
+
+**Why**
+- Give each current and future demo a clear page location and an isolated asset namespace.
+
+**Validation**
+- `JEKYLL_ENV=production bundle exec jekyll build --config _config.yml,_config_local.yml --destination _site_local`
+- Confirmed the generated demo and all five grammar files exist at their new paths and no source references use the former grammar path.
+
+**Risks / Follow-ups**
+- Any external links directly targeting the former `/assets/grammars/` files will need to use the new asset paths; the public MG Constructor page URL is unchanged.
+
+---
+
+## 2026-10-07 15:03 BST — Aletheria Browser Demo
+
+**Summary**
+- Published the standalone Aletheria web client at `/demos/aletheria/`, completing the existing “play in browser” link.
+- Kept the client CSS, JavaScript, and external configuration under `assets/demos/aletheria-web/` and configured the client for `https://api.mermolaeva.com`.
+- Added a page-level Content Security Policy restricted to same-origin resources and the Aletheria API for connections and API-hosted images.
+
+**Why**
+- Make the browser demo available from the website without adding a frontend build or dependencies.
+
+**Validation**
+- `bundle check`
+- `JEKYLL_ENV=production bundle exec jekyll build --config _config.yml,_config_local.yml --destination _site_local`
+- Confirmed the generated Demos link, Aletheria page, CSP, and all three referenced assets are present at their expected paths.
+
+**Risks / Follow-ups**
+- The API deployment must allow the exact website origin `https://mermolaeva.com`.
+- Browsers do not enforce `frame-ancestors` when CSP is delivered through an HTML meta element; full framing protection requires the same policy in an HTTP response header at the hosting or CDN layer.
+- End-to-end gameplay still requires the separately deployed API and should be smoke-tested after its CORS/origin configuration is active.
+
+---
+
+## 2026-10-07 15:35 BST — Aletheria Link New Tab
+
+**Summary**
+- Made the Aletheria “play in browser” link open in a new tab with `rel="noopener"` protection.
+
+**Why**
+- Keep the Demos page available while the standalone game is open.
+
+**Validation**
+- `JEKYLL_ENV=production bundle exec jekyll build --config _config.yml,_config_local.yml --destination _site_local`
+- Confirmed the generated link includes `target="_blank"` and `rel="noopener"`.
+
+**Risks / Follow-ups**
+- None known.
+
+---

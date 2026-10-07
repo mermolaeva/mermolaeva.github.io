@@ -43,7 +43,7 @@ how can we choose between competing analyses on quantitative grounds? Framing th
   
 ## <span id="minimalist-grammars-and-agreement">Minimalist grammars and agreement</span>
 Stabler's minimalist grammars provide a useful tool for modeling natural language syntax by defining grammar fragments in a very precise way. As a formalization of Chomsky's Minimalist Program, they can accommodate linguistic analyses from the field of generative syntax. However, they have no machinery for encoding agreement: while morphology can be simulated by multiplying lexical items, there is no systematic way to state generalizations and implement actual proposals. My goal is to extend minimalist grammars with morphological features and operations on them.    
-A Javascript implementation of MGs with agreement can be found on [this page]({{ site.baseurl }}/demos/mg-constructor).  
+A Javascript implementation of MGs with agreement can be found on [this page]({{ site.baseurl }}/demos/mg-constructor/).  
 A more recent (and less cumbersome) iteration of this approach, developed together with [Gregory Kobele](https://home.uni-leipzig.de/gkobele/), is Agreement over Channels. Under this perspective, agreement transfers purely morphological information from head to head along channels established via syntactic feature checking.
 
 * **Agreeing minimalist grammars**  
@@ -58,7 +58,7 @@ A more recent (and less cumbersome) iteration of this approach, developed togeth
 
 * **Morphological agreement in minimalist grammars**    
 *[22nd Conference on Formal Grammar](http://fg.phil.hhu.de/2017/), July 22--23, 2017. Toulouse, France*    
-[[slides]({{ site.baseurl }}/assets/pdfs/Ermolaeva_agreement_in_MGs_slides.pdf)] [[paper]({{ site.baseurl }}/assets/pdfs/Ermolaeva_agreement_in_MGs.pdf)] [[demo]({{ site.baseurl }}/demos/mg-constructor)]  
+[[slides]({{ site.baseurl }}/assets/pdfs/Ermolaeva_agreement_in_MGs_slides.pdf)] [[paper]({{ site.baseurl }}/assets/pdfs/Ermolaeva_agreement_in_MGs.pdf)] [[demo]({{ site.baseurl }}/demos/mg-constructor/)]  
   
 ## <span id="formalizing-distributed-morphology">Formalizing Distributed Morphology</span>
 Together with [Daniel Edmiston](https://danedmiston.github.io/home_page/), I worked on a mathematically rigorous formalization of the Distributed Morphology framework. We were interested in adapting DM to work over strings. Distributed Morphology is typically depicted as operating on (binary) trees, meaning its strong-generative capacity is above regular. By constraining it to operating on strings, we restricted the strong-generative capacity of the morphological module to that of regular languages, providing an immediate explanation for the *regular*ity of morphological phenomena in natural language.  

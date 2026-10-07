@@ -1,0 +1,253 @@
+:root {
+  color-scheme: light;
+
+
+  /* Page backdrop and the mission-history well. */
+  --color-page-background: #ffffff; /* Main page color and gradient endpoint. */
+  --color-page-glow: #ffffff; /* Opaque highlight at the top of the page. */
+  --color-transcript-background: #ffffff; /* Mission transcript container. */
+
+  /* Message, form, and control surfaces. */
+  --color-card-background: #ffffff; /* General messages, notes, forms, and submenu shell. */
+  --color-passage-background: #e8f2fb; /* Passage cards. */
+  --color-user-message-background: #f5f1fa; /* Player action cards. */
+  --color-submenu-message-background: #f8f4fb; /* Messages inside an open submenu. */
+  --color-input-background: #ffffff; /* Freeform response field. */
+  --color-control-background: #b8d4ed; /* Default button fill. */
+  --color-control-hover-background: #9fc3e3; /* Hovered buttons. */
+  --color-disabled-background: #f2f2f3; /* Disabled buttons and response field. */
+
+  /* Text and status colors. */
+  --color-text-primary: #000000; /* Main interface and message text. */
+  --color-text-title: #003366; /* Main page title ("Aletheria"). */
+  --color-text-muted: #7a8288; /* Status, notes, and form labels. */
+  --color-text-disabled: #9ba1a6; /* Disabled control text. */
+  --color-text-danger: #c7463b; /* Error status text. */
+
+  /* Accents, outlines, and borders. */
+  --color-accent: #7550b3; /* Eyebrow text and the main submenu outline. */
+  --color-accent-strong: #5e3a9b; /* Hover/focus emphasis. */
+  --color-accent-muted: #a58acb; /* User-message border and submenu outer ring. */
+  --color-border-default: #ccc; /* General card, form, input, and transcript borders. */
+  --color-border-submenu-message: #c7b5df; /* Message borders within submenus. */
+  --color-border-control: #7292ad; /* Enabled button borders. */
+  --color-border-disabled: #ccc; /* Disabled button and input borders. */
+  --color-link: #0066cd;
+
+
+
+  font-family: "Lucida Grande", "Helvetica Neue", -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-size: 1.0625rem;
+  background: radial-gradient(
+    circle at top,
+    var(--color-page-glow),
+    var(--color-page-background) 36rem
+  );
+  color: var(--color-text-primary);
+}
+
+button, input { font: inherit; }
+
+.game-shell {
+  width: min(54rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1rem 0 3rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.game-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.25rem;
+  color: var(--color-accent);
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+h1 {
+  margin: 0;
+  color: var(--color-text-title);
+  /* font-family: Georgia, serif; */
+  font-size: clamp(2rem, 8vw, 3.4rem);
+}
+.status { margin: 0; color: var(--color-text-muted); text-align: right; }
+.status.error { color: var(--color-text-danger); }
+
+.browser-note,
+.message,
+.action-form,
+.submenu-panel {
+  border: 0px solid var(--color-border-default);
+  border-radius: 0.8rem;
+  background: var(--color-card-background);
+}
+
+.browser-note {
+  padding: 0.75rem 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.92em;
+  white-space: pre-line;
+}
+.browser-note a { color: var(--color-link); }
+.browser-note a:hover { color: var(--color-link); }
+.browser-note a:focus-visible {
+  border-radius: 0.15rem;
+  outline: 2px solid var(--color-accent-strong);
+  outline-offset: 2px;
+}
+
+.play-area {
+  display: block;
+}
+
+.transcript {
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+}
+
+.game-shell[data-view-mode="mission"] .transcript {
+  height: clamp(18rem, 52vh, 32rem);
+  min-height: 12rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: 0.8rem;
+  background: var(--color-transcript-background);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  resize: vertical;
+  scrollbar-gutter: stable;
+}
+
+.message {
+  padding: 1rem 1.1rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.message img {
+  display: block;
+  width: min(100%, 28rem);
+  max-height: 18rem;
+  margin: 0 0 0.8rem;
+  border-radius: 0.55rem;
+  object-fit: cover;
+}
+
+.message.passage-message { background: var(--color-passage-background); }
+.message.user-message {
+  width: min(86%, 42rem);
+  justify-self: end;
+  /* border-color: var(--color-accent-muted); */
+  background: var(--color-user-message-background);
+}
+.passage-label { color: var(--color-accent); font-weight: 700; }
+.stream-suffix { margin-top: 0.8rem; }
+
+.submenu-panel {
+  margin-top: 0.75rem;
+  padding: 0.85rem;
+  display: grid;
+  gap: 0.75rem;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent-muted);
+}
+
+.submenu-panel[hidden] { display: none; }
+.submenu-messages {
+  display: grid;
+  gap: 0.65rem;
+}
+.submenu-messages .message {
+  border-color: var(--color-border-submenu-message);
+  background: var(--color-submenu-message-background);
+}
+
+.options {
+  display: grid;
+  gap: 0.65rem;
+}
+.options:empty { display: none; }
+
+.options button,
+.action-form button {
+  min-height: 2.8rem;
+  border: 1px solid var(--color-border-control);
+  border-radius: 0.65rem;
+  background: var(--color-passage-background);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  padding: 0.65rem 1rem;
+  text-align: left;
+}
+
+.options button:hover,
+.action-form button:hover {
+  background: var(--color-control-hover-background);
+  border-color: var(--color-accent-strong);
+}
+
+.options button:focus-visible,
+.action-form button:focus-visible {
+  outline: 2px solid var(--color-accent-strong);
+  outline-offset: 2px;
+}
+
+.options button:disabled,
+.action-form button:disabled,
+.action-row input:disabled {
+  cursor: wait;
+  border-color: var(--color-border-disabled);
+  background: var(--color-disabled-background);
+  color: var(--color-text-disabled);
+}
+
+.action-form { padding: 1rem; }
+.action-form label { display: block; margin-bottom: 0.5rem; color: var(--color-text-muted); }
+.action-row { display: grid; grid-template-columns: 1fr auto; gap: 0.65rem; }
+.action-row input {
+  min-width: 0;
+  border: 1px solid var(--color-border-default);
+  border-radius: 0.65rem;
+  background: var(--color-input-background);
+  color: var(--color-text-primary);
+  padding: 0.7rem 0.8rem;
+}
+.action-form button { text-align: center; }
+
+@media (min-width: 36.01rem) {
+  .submenu-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 36rem) {
+  .game-shell {
+    width: min(100% - 1rem, 54rem);
+    min-height: 100vh;
+    padding: 1rem 0 2rem;
+  }
+  .game-header { align-items: start; flex-direction: column; }
+  .status { text-align: left; }
+  .game-shell[data-view-mode="mission"] .transcript {
+    height: min(55vh, 26rem);
+    scrollbar-gutter: auto;
+  }
+  .action-row { grid-template-columns: 1fr; }
+}

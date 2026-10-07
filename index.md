@@ -15,7 +15,7 @@ I received my Ph.D. in 2021 from the [Department of Linguistics](http://linguist
 
 <!-- Since then, I have been interested in developing tools that facilitate fieldwork and aid in the processing of field data -- for instance, a system for [automated extraction of agglutinative morphology]({{ site.baseurl }}/projects#automated-processing-of-agglutinative-morphology) from small samples of glossed text. -->
 
-I also built a small LLM-driven text game inspired by coffee-break roguelikes and tabletop RPGs. You can try it here: [[play on Discord in English](https://discord.gg/xZskWzzk2D)] [[play on Telegram in Russian](https://t.me/Aletheria_bot)]
+I also built a small LLM-driven text game inspired by coffee-break roguelikes and tabletop RPGs. You can try it [here]({{ site.baseurl }}/demos/aletheria/){: target="_blank" rel="noopener"}.
 
 <!-- ## Research interests
 * Mathematical/computational linguistics

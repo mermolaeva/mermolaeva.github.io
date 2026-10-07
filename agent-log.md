@@ -263,3 +263,22 @@ Human comments must go in clearly marked sections.
 - None known.
 
 ---
+
+## 2026-10-07 17:18 BST — Aletheria Analytics
+
+**Summary**
+- Added the site's configured GA4 tag to the standalone Aletheria page in production builds.
+- Kept analytics initialization in a same-origin script and extended the page CSP only for Google's tag and collection endpoints.
+
+**Why**
+- The standalone page bypasses the theme layout and therefore did not inherit the site's analytics integration.
+
+**Validation**
+- `JEKYLL_ENV=production bundle exec jekyll build --config _config.yml,_config_local.yml --destination _site_local`
+- Confirm the generated Aletheria page contains the configured Google tag and same-origin initializer, while a development build omits both.
+- Confirm the page CSP permits the Google tag and analytics collection endpoints without allowing arbitrary inline scripts.
+
+**Risks / Follow-ups**
+- After deployment, confirm an Aletheria visit appears in the GA4 Realtime report with content blocking disabled.
+
+---
